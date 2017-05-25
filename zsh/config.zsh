@@ -9,13 +9,13 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-setopt NO_BG_NICE # don't nice background tasks
-setopt NO_HUP
-setopt NO_LIST_BEEP
+# setopt NO_BG_NICE # don't nice background tasks
+# setopt NO_HUP
+setopt NO_HIST_BEEP
 setopt LOCAL_OPTIONS # allow functions to have local options
 setopt LOCAL_TRAPS # allow functions to have local traps
-setopt HIST_VERIFY
-setopt SHARE_HISTORY # share history between sessions ???
+setopt HIST_VERIFY # when doing a bang substitution this makes you verify before execution
+setopt SHARE_HISTORY # share history between sessions, but not if using ! unless history is used
 setopt EXTENDED_HISTORY # add timestamps to history
 setopt PROMPT_SUBST
 setopt CORRECT
