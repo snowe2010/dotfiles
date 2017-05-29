@@ -1,14 +1,35 @@
+[core]
+        excludesfile = ~/.gitignore
+        editor = /usr/bin/vim
+        hooksPath = /Users/tylerthrailkill/Documents/dev/code/git-hooks
+        
 # Local/private config goes in the include
 [include]
         path = ~/.gitconfig.local
-[hub]
-        protocol = https
 [alias]
         co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
+        promote = !$DOTFILES/bin/git-promote
+        wtf     = !$DOTFILES/bin/git-wtf
+        rank-contributors = !$DOTFILES/bin/git-rank-contributors
         count   = !git shortlog -sn
+        stsh = stash --keep-index
+        staash = stash --include-untracked
+        staaash = stash --all
+        branch-name = rev-parse --abbrev-ref HEAD     
+        rm-remote-branch = !"f() { branch=${1-$(git branch-name)}; git push origin :$branch; }; f"
+        rm-local-branch = !"f() { branch=${1-$(git branch-name)}; git checkout master; git branch -D $branch; }; f"
+        rm-branch-fully = !"f() { branch=${1-$(git branch-name)}; git rm-local-branch $branch; git rm-remote-branch $branch; }; f"
+
+[branch]
+        autosetuprebase = always
+[difftool "sourcetree"]
+        cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+        path = 
+[mergetool "sourcetree"]
+        cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+        trustExitCode = true
+[rerere]
+        enabled = true
 [color]
         diff = auto
         status = auto
@@ -31,3 +52,11 @@
         #
         # Setting to git 2.0 default to suppress warning message
         default = simple
+[diff]
+        tool = intellij
+        compactionHeuristic = true
+        renameLimit = 10000
+[difftool "intellij"]
+        cmd = /Applications/IntelliJ\\ IDEA.app/Contents/MacOS/idea diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
+[commit]
+        gpgsign = true
