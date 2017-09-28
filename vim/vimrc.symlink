@@ -67,3 +67,27 @@ else
 	nmap gcc guu~h
 	vmap gc gu~h
 endif
+
+set whichwrap+=<,>,h,l,[,]
+
+set relativenumber
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
+
+set pastetoggle=<F3>
+
+
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber

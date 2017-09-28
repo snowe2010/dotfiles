@@ -1,0 +1,77 @@
+export ZSH=/Users/tylerthrailkill/.oh-my-zsh
+
+ZSH_THEME="edvardm"
+LSCOLORS="exfxcxdxbxegedabagacad"
+HIST_FIND_NO_DUPS="true"
+DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_TITLE="true"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+plugins=(zsh-nvm brew bundler colorize common-aliases fancy-ctrl-z git git-flow git-prompt gitfast grunt gulp jsontools lol mvn nyan spring sublime thefuck themes fasd)
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export M2_HOME=~/Applications/ActiveVersions/Maven
+export GRADLE_HOME=~/Applications/ActiveVersions/Gradle
+export PHANTOM_JS=~/Applications/ActiveVersions/PhantomJS
+
+export PATH="$M2_HOME/bin:$GRADLE_HOME/bin:$PHANTOM_JS/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+source $ZSH/oh-my-zsh.sh
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+eval $(thefuck --alias)
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+alias findextension="find . -type f -name "
+alias deleteextension="find . -type f -delete -name "
+eval "$(rbenv init -)"
+alias history=history
+alias ms="mvn spring-boot:run"
+alias mci="mvn clean install"
+alias gfff="git flow feature finish"
+alias gffp="git flow feature publish"
+function gffs {
+  git flow feature start $1 $2
+  git flow feature publish $1
+}
+function gfco {
+  gco feature/LP-$1
+}
+
+source ~/git-completion.bash
+
+PATH=$PATH:/usr/local/sbin:/Users/tylerthrailkill/scripts
+alias change-commits="!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
+
+
+function set_iterm_title {
+  echo -ne "\e]1;$1\a"
+}
+
+function git_branch {
+  BRANCH_REFS=$(git symbolic-ref HEAD 2>/dev/null) || return
+    GIT_BRANCH="${BRANCH_REFS#refs/heads/}"
+      [ -n "$GIT_BRANCH" ] && echo "$GIT_BRANCH "
+}
+
+function precmd {
+  set_iterm_title "${PWD//*\//} >$(git_branch)<"
+    #PROMPT="%c %{$fg[cyan]%}$(git_branch)%{$reset_color%}%# "
+}
+ssh-add -A 2>/dev/null;
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:~/.cargo/bin
+alias reload!='. ~/.zshrc'
+
+export NVM_DIR="/Users/tylerthrailkill/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export JWT_SIGNING_KEY=anything
+

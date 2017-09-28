@@ -1,41 +1,105 @@
-# shortcut to this dotfiles path is $DOTFILES
+# to profile slowness use
+# env ZSH_PROF= zsh -ic zprof
+if [[ -v ZSH_PROF ]]; then
+  zmodload zsh/zprof
+fi
+
+autoload -Uz promptinit;
+promptinit
+prompt pure
+
+typeset -F SECONDS
+echo $SECONDS
+
+# # shortcut to this dotfiles path is $DOTFILES
 export DOTFILES=$HOME/.dotfiles
 
-# your project folder that we can `c [tab]` to
+# # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
 
-# Stash your environment variables in ~/.localrc. This means they'll stay out
-# of your main dotfiles repository (which may be public, like this one), but
-# you'll have access to them in your scripts.
+# # Stash your environment variables in ~/.localrc. This means they'll stay out
+# # of your main dotfiles repository (which may be public, like this one), but
+# # you'll have access to them in your scripts.
 if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
 
-# all of our zsh files
+echo $SECONDS
+# # all of our zsh files 
 typeset -U config_files
 config_files=($DOTFILES/**/*.zsh)
 
-# load the path files
+echo $SECONDS
+# # load the path files
 for file in ${(M)config_files:#*/path.zsh}
 do
   source $file
 done
 
+echo $SECONDS
 # load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
+	echo $file
   source $file
+  echo $SECONDS
 done
 
-# initialize autocomplete here, otherwise functions won't be loaded
+echo $SECONDS
+# # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
 
-# load every completion after autocomplete loads
+echo $SECONDS
+# # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
 do
   source $file
 done
 
+echo $SECONDS
 unset config_files
+
+
+echo $SECONDS
+# export ZSH=/Users/tylerthrailkill/.oh-my-zsh
+
+ZSH_THEME="edvardm"
+LSCOLORS="exfxcxdxbxegedabagacad"
+HIST_FIND_NO_DUPS="true"
+DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_TITLE="true"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export M2_HOME=~/Applications/ActiveVersions/Maven
+export GRADLE_HOME=~/Applications/ActiveVersions/Gradle
+export PHANTOM_JS=~/Applications/ActiveVersions/PhantomJS
+
+export PATH="$M2_HOME/bin:$GRADLE_HOME/bin:$PHANTOM_JS/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" #:/usr/local/Cellar/elixir/1.5.1/bin"
+
+echo $SECONDS
+
+PROFILE_STARTUP=false
+if [[ "$PROFILE_STARTUP" == true ]]; then
+	    # http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
+	PS4=$'%D{%M%S%.} %N:%i> '
+	exec 3>&2 2>$HOME/tmp/startlog.$$
+	setopt xtrace prompt_subst
+fi
+# Entirety of my startup file... then
+if [[ "$PROFILE_STARTUP" == true ]]; then
+	unsetopt xtrace
+	exec 2>&3 3>&-
+fi
+echo $SECONDS
+
+
+source $HOME/.cargo/env

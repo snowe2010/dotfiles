@@ -7,3 +7,5 @@ if test -f $completion
 then
   source $completion
 fi
+
+# source ~/git-completion.zsh

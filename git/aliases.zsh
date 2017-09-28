@@ -31,7 +31,7 @@ function gffs {
   git flow feature publish $1
 }
 function gfco {
-  gco feature/LP-$1
+  git checkout feature/LP-$1
 }
 
 

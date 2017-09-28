@@ -5,6 +5,7 @@ export CLICOLOR=true
 fpath=($DOTFILES/functions $fpath)
 
 autoload -U $DOTFILES/functions/*(:t)
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -32,7 +33,7 @@ setopt HIST_REDUCE_BLANKS
 
 # don't expand aliases _before_ completion has finished
 #   like: git comm-[tab]
-setopt complete_aliases
+# setopt complete_aliases # this causes non completion on git aliases from the oh-my-zsh git aliases plugin :/
 
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word

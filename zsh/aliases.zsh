@@ -10,3 +10,4 @@ alias deleteextension="find . -type f -delete -name "
 alias ms="mvn spring-boot:run"
 alias mci="mvn clean install"
 
+alias rake="noglob rake"
