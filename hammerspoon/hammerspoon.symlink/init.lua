@@ -356,6 +356,11 @@ if string.len(hsconsole_keys[2]) > 0 then
     spoon.ModalMgr.supervisor:bind(hsconsole_keys[1], hsconsole_keys[2], "Toggle Hammerspoon Console", function() hs.toggleConsole() end)
 end
 
+if spoon.RoundedCorners then
+    spoon.RoundedCorners.level = hs.canvas.windowLevels["desktop"]
+    spoon.RoundedCorners.radius = 6
+    spoon.RoundedCorners:start()
+end
 ----------------------------------------------------------------------------------------------------
 -- Finally we initialize ModalMgr supervisor
 spoon.ModalMgr.supervisor:enter()
