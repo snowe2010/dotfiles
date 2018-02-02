@@ -361,6 +361,17 @@ if spoon.RoundedCorners then
     spoon.RoundedCorners.radius = 6
     spoon.RoundedCorners:start()
 end
+
+----------------------------------------------------------------------------------------------------
+-- Register Token generator
+-- Cmd-Alt-G - type Github token  
+token_keys = token_keys or {
+    hotkey = {{"cmd", "alt", "shift", "ctrl"}, "F4"},
+    keychain_label = "token_tunnel"
+}
+spoon.Token:bindHotKeys(token_keys)
+
+
 ----------------------------------------------------------------------------------------------------
 -- Finally we initialize ModalMgr supervisor
 spoon.ModalMgr.supervisor:enter()
