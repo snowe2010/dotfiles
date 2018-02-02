@@ -55,7 +55,7 @@ end
 
 function obj:bindHotKeys(keys)
     hs.hotkey.bind(keys["hotkey"][1], keys["hotkey"][2], function()
-        spoon.Token:token_keystroke(keys["keychain_label"])
+        token_keystroke(keys["keychain_label"])
     end)
 end
 
