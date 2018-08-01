@@ -1,6 +1,7 @@
 hs.hotkey.alertDuration = 0
 hs.hints.showTitleThresh = 0
 hs.window.animationDuration = 0
+hyper = {"cmd", "alt", "shift", "ctrl"}
 
 privatepath = hs.fs.pathToAbsolute(hs.configdir .. '/private')
 if not privatepath then
@@ -17,6 +18,8 @@ hsreload_keys = hsreload_keys or {{"cmd", "shift", "ctrl"}, "R"}
 if string.len(hsreload_keys[2]) > 0 then
     hs.hotkey.bind(hsreload_keys[1], hsreload_keys[2], "Reload Configuration", function() hs.reload() end)
 end
+
+hs.loadSpoon("SpoonInstall")
 
 -- ModalMgr Spoon must be loaded explicitly, because this repository heavily relies upon it.
 hs.loadSpoon("ModalMgr")
@@ -42,6 +45,31 @@ end
 for _, v in pairs(hspoon_list) do
     hs.loadSpoon(v)
 end
+
+Install=spoon.SpoonInstall
+Install:andUse("WindowGrid",
+               {
+                 config = { gridGeometries = { { "10x3" } } },
+                 hotkeys = {show_grid = {{"alt"}, "g"}},
+                 start = true
+               }
+)
+Install:andUse("WindowScreenLeftAndRight",
+               {
+                 hotkeys = {
+                    screen_left = { hyper, "[" },
+                    screen_right= { hyper, "]" },
+                 }
+               }
+)
+Install:andUse("FadeLogo",
+               {
+                 config = {
+                   default_run = 1.0,
+                 },
+                 start = true
+               }
+)
 
 ----------------------------------------------------------------------------------------------------
 -- Then we create/register all kinds of modal keybindings environments.

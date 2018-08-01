@@ -5,6 +5,7 @@ You can find the original instructions below, with references, but I have duplic
 
 https://www.codeproject.com/Articles/562949/ManagingplusNestedplusLibrariesplusUsingplustheplu
 https://github.com/ande3577/Git-Subtree-Workflow-Proposal/wiki/Subtree-Based-Workflow
+https://git-scm.com/book/en/v1/Git-Tools-Subtree-Merging
 
 ## Creating subtree tracker
 

@@ -15,15 +15,15 @@
     "stripped_doc" : [
 
     ],
-    "type" : "Module",
+    "desc" : "generate google authenticator token value keystrokes",
     "Deprecated" : [
 
     ],
-    "desc" : "generate google authenticator token value keystrokes",
+    "type" : "Module",
     "Constructor" : [
 
     ],
-    "Field" : [
+    "items" : [
 
     ],
     "Method" : [
@@ -32,10 +32,10 @@
     "Command" : [
 
     ],
-    "items" : [
+    "doc" : "generate google authenticator token value keystrokes\nRetrieve a google authenticator token seed from keychain and use this to calculate the current value\nSimulate keystrokes for this token value\n\nwritten by Teun Vink <github@teun.tv>, converted to spoon by Tyler Thrailkill <snowe>\n\nhttps:\/\/github.com\/teunvink\/hammerspoon",
+    "Field" : [
 
     ],
-    "doc" : "generate google authenticator token value keystrokes\nRetrieve a google authenticator token seed from keychain and use this to calculate the current value\nSimulate keystrokes for this token value\n\nwritten by Teun Vink <github@teun.tv>, converted to spoon by Tyler Thrailkill <snowe>\n\nhttps:\/\/github.com\/teunvink\/hammerspoon",
     "name" : "Token"
   }
 ]
