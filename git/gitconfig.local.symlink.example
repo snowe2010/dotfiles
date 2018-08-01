@@ -1,5 +1,7 @@
 [user]
         name = AUTHORNAME
         email = AUTHOREMAIL
+[core]
+        hooksPath = GIT_HOOKS_PATH
 [credential]
         helper = GIT_CREDENTIAL_HELPER

@@ -1,7 +1,7 @@
 [core]
         excludesfile = ~/.gitignore
         editor = /usr/bin/vim
-        hooksPath = /Users/tylerthrailkill/Documents/dev/code/git-hooks
+	pager = /usr/local/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less -r
         
 # Local/private config goes in the include
 [include]
@@ -29,7 +29,7 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [rerere]
-        enabled = true
+	enabled = true
 [color]
         diff = auto
         status = auto
