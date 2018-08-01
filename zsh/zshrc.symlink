@@ -92,5 +92,4 @@ if [ -f '/Users/tylerthrailkill/google-cloud-sdk/completion.zsh.inc' ]; then sou
 
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
-
 eval "$(rbenv init -)"
