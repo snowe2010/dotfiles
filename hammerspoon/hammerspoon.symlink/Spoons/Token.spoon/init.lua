@@ -45,17 +45,18 @@ function password_from_keychain(name)
 end
 
 -- read a token seed from keychain, generate a code and make keystrokes for it
-function token_keystroke(token_name)
+function token_keystroke(token_name, pass_name)
     local token = password_from_keychain(token_name)
     local hash = gauth.GenCode(token, math.floor(os.time() / 30))
 
     -- generate keystrokes for the result
+    hs.eventtap.keyStrokes(password_from_keychain(pass_name))
     hs.eventtap.keyStrokes(("%06d"):format(hash))
 end
 
 function obj:bindHotKeys(keys)
     hs.hotkey.bind(keys["hotkey"][1], keys["hotkey"][2], function()
-        token_keystroke(keys["keychain_label"])
+        token_keystroke(keys["keychain_label"], keys["keychain_pass"])
     end)
 end
 

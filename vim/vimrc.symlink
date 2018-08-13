@@ -94,8 +94,8 @@ autocmd InsertLeave * :set relativenumber
 
 
 " show leading spaces
-hi Conceal guibg=NONE ctermbg=NONE ctermfg=DarkGrey
-autocmd BufWinEnter * setl conceallevel=2 concealcursor=nv
-autocmd BufWinEnter * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
-autocmd BufReadPre * setl conceallevel=2 concealcursor=nv
-autocmd BufReadPre * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
+" hi Conceal guibg=NONE ctermbg=NONE ctermfg=DarkGrey
+" autocmd BufWinEnter * setl conceallevel=2 concealcursor=nv
+" autocmd BufWinEnter * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
+" autocmd BufReadPre * setl conceallevel=2 concealcursor=nv
+" autocmd BufReadPre * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·

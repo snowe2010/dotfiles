@@ -1,7 +1,10 @@
 hs.hotkey.alertDuration = 0
 hs.hints.showTitleThresh = 0
 hs.window.animationDuration = 0
+hs.logger.defaultLogLevel = "info"
+
 hyper = {"cmd", "alt", "shift", "ctrl"}
+meh = {"alt", "shift", "ctrl"}
 
 privatepath = hs.fs.pathToAbsolute(hs.configdir .. '/private')
 if not privatepath then
@@ -395,7 +398,8 @@ end
 -- Cmd-Alt-G - type Github token  
 token_keys = token_keys or {
     hotkey = {{"cmd", "alt", "shift", "ctrl"}, "F4"},
-    keychain_label = "token_tunnel"
+    keychain_token = "token_tunnel",
+    keychain_pass = "token_tunnel_pass"
 }
 spoon.Token:bindHotKeys(token_keys)
 
