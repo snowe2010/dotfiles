@@ -13,7 +13,6 @@ if not privatepath then
 end
 privateconf = hs.fs.pathToAbsolute(hs.configdir .. '/private/config.lua')
 if privateconf then
-    -- Load awesomeconfig file if exists
     require('private/config')
 end
 
@@ -36,33 +35,27 @@ for _, v in pairs(hspoon_list) do
 end
 
 Install=spoon.SpoonInstall
-Install:andUse("WindowGrid",
-               {
-                 config = { gridGeometries = { { "10x3" } } },
-                 hotkeys = {show_grid = {{"alt"}, "g"}},
-                 start = true
-               }
-)
-Install:andUse("WindowScreenLeftAndRight",
-               {
-                 hotkeys = {
-                    screen_left = { hyper, "[" },
-                    screen_right= { hyper, "]" },
-                 }
-               }
-)
-Install:andUse("FadeLogo",
-               {
-                 config = {
-                   default_run = 1.0,
-                 },
-                 start = true
-               }
-)
+Install:andUse("WindowGrid", {
+    config = { gridGeometries = { { "10x3" } } },
+    hotkeys = {show_grid = {{"alt"}, "g"}},
+    start = true
+})
+Install:andUse("WindowScreenLeftAndRight", {
+    hotkeys = {
+        screen_left = { hyper, "[" },
+        screen_right= { hyper, "]" },
+    }
+})
+Install:andUse("FadeLogo", {
+    config = {
+        default_run = 1.0,
+    },
+    start = true
+})
 Install:andUse("Caffeine", {
     start = true,
     hotkeys = {
-      toggle = { hyper, "1" }
+        toggle = { hyper, "1" }
     }
 })
 Install:andUse("Token", {
@@ -72,6 +65,12 @@ Install:andUse("Token", {
     config = {
         token = "token_tunnel",
         password = "token_tunnel_pass"
+    }
+})
+Install:andUse("MoveSpaces", {
+    hotkeys = {
+        space_right = { {'ctrl','shift'}, '.' },
+        space_left =  { {'ctrl','shift'}, ',' }
     }
 })
 
@@ -175,7 +174,7 @@ if spoon.ClipShow then
         spoon.ClipShow:toggleShow()
         spoon.ModalMgr:deactivate({"clipshowM"})
     end)
-
+    
     -- Register clipshowM with modal supervisor
     hsclipsM_keys = hsclipsM_keys or {"alt", "C"}
     if string.len(hsclipsM_keys[2]) > 0 then
@@ -217,7 +216,7 @@ if spoon.CountDown then
         spoon.CountDown:pauseOrResume()
         spoon.ModalMgr:deactivate({"countdownM"})
     end)
-
+    
     -- Register countdownM with modal supervisor
     hscountdM_keys = hscountdM_keys or {"alt", "I"}
     if string.len(hscountdM_keys[2]) > 0 then
@@ -265,7 +264,7 @@ if spoon.WinWin then
     cmodal:bind('', '[', 'Undo Window Manipulation', function() spoon.WinWin:undo() end)
     cmodal:bind('', ']', 'Redo Window Manipulation', function() spoon.WinWin:redo() end)
     cmodal:bind('', '`', 'Center Cursor', function() spoon.WinWin:centerCursor() end)
-
+    
     -- Register resizeM with modal supervisor
     hsresizeM_keys = hsresizeM_keys or {"alt", "R"}
     if string.len(hsresizeM_keys[2]) > 0 then
@@ -305,77 +304,3 @@ end
 ----------------------------------------------------------------------------------------------------
 -- Finally we initialize ModalMgr supervisor
 spoon.ModalMgr.supervisor:enter()
-
--- require traverses directories in your ~/.hammerspoon folder, with directory levels separated by dots
-local spaces = require('hs._asm.undocumented.spaces')
-local spaceInDirection = require('ext.spaces').spaceInDirection
-local isSpaceFullscreenApp = require('ext.spaces').isSpaceFullscreenApp
-local focusScreen = require('ext.screen').focusScreen
-
-local cache  = {
-    mousePosition   = nil,
-    windowPositions = hs.settings.get('windowPositions') or {}
-  }
-  
-local module = { cache = cache }
-
-local function moveToSpace(win, direction)
-  local clickPoint  = win:zoomButtonRect()
-  local sleepTime   = 1000
-  local targetSpace = spaceInDirection(direction)
-
-  -- check if all conditions are ok to move the window
-  local shouldMoveWindow = hs.fnutils.every({
-    clickPoint ~= nil,
-    targetSpace ~= nil,
-    not isSpaceFullscreenApp(targetSpace),
-    not cache.movingWindowToSpace
-  }, function(test) return test end)
-
-  if not shouldMoveWindow then return end
-
-  cache.movingWindowToSpace = true
-
-  cache.mousePosition = cache.mousePosition or hs.mouse.getAbsolutePosition()
-
-  clickPoint.x = clickPoint.x + clickPoint.w + 5
-  clickPoint.y = clickPoint.y + clickPoint.h / 2
-
-
-  -- fix for Chrome UI
-  if win:application():title() == 'Google Chrome' then
-    clickPoint.y = clickPoint.y - clickPoint.h
-  end
-
-  -- focus screen before switching window
-  focusScreen(win:screen())
-
-
-  hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseDown, clickPoint):post()
-  hs.timer.usleep(sleepTime)
-
-  hs.eventtap.keyStroke({ 'cmd', 'ctrl' }, direction == 'east' and 'right' or 'left')
-
-  hs.timer.waitUntil(
-    function()
-      return spaces.activeSpace() == targetSpace
-    end,
-    function()
-      hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseUp, clickPoint):post()
-
-      -- resetting mouse after small timeout is needed for focusing screen to work properly
-      hs.mouse.setAbsolutePosition(cache.mousePosition)
-      cache.mousePosition = nil
-
-      -- reset cache
-      cache.movingWindowToSpace = false
-    end,
-    0.01 -- check every 1/100 of a second
-  )
-end
-hs.fnutils.each({
-    { key = '5', direction = 'west' },
-    { key = '6', direction = 'east' }
-  }, function(object)
-    hs.hotkey.bind({"ctrl", "shift"}, object.key, nil, function() moveToSpace(hs.window.frontmostWindow(), object.direction) end)
-  end)

@@ -50,7 +50,7 @@ module.moveToSpace = function(win, direction)
   hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseDown, clickPoint):post()
   hs.timer.usleep(sleepTime)
 
-  hs.eventtap.keyStroke({ 'ctrl' }, direction == 'east' and 'right' or 'left')
+  hs.eventtap.keyStroke({ 'cmd', 'ctrl' }, direction == 'east' and 'right' or 'left')
 
   hs.timer.waitUntil(
     function()
