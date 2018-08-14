@@ -11,3 +11,4 @@ export PHANTOM_JS=~/Applications/ActiveVersions/PhantomJS
 
 export PATH="$M2_HOME/bin:$GRADLE_HOME/bin:$PHANTOM_JS/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" #:/usr/local/Cellar/elixir/1.5.1/bin"
 export MAVEN_OPTS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
