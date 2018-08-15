@@ -16,13 +16,13 @@ if privateconf then
     require('private/config')
 end
 
-hsreload_keys = hsreload_keys or {{"cmd", "shift", "ctrl"}, "R"}
-if string.len(hsreload_keys[2]) > 0 then
-    hs.hotkey.bind(hsreload_keys[1], hsreload_keys[2], "Reload Configuration", function()
-        hs.console.clearConsole()
-        hs.reload() 
-    end)
-end
+-- hsreload_keys = hsreload_keys or {{"cmd", "shift", "ctrl"}, "R"}
+-- if string.len(hsreload_keys[2]) > 0 then
+--     hs.hotkey.bind(hsreload_keys[1], hsreload_keys[2], "Reload Configuration", function()
+--         hs.console.clearConsole()
+--         hs.reload() 
+--     end)
+-- end
 
 hs.loadSpoon("SpoonInstall")
 
@@ -71,6 +71,14 @@ Install:andUse("MoveSpaces", {
     hotkeys = {
         space_right = { {'ctrl','shift'}, '.' },
         space_left =  { {'ctrl','shift'}, ',' }
+    }
+})
+Install:andUse("Reload", {
+    hotkeys = {
+        reload = {{"cmd", "shift", "ctrl"}, "R"},
+    },
+    config = {
+        clearConsole = false
     }
 })
 

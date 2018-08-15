@@ -16,10 +16,10 @@
 
     ],
     "desc" : "Reload Hammerspoon. Includes ability to clear console",
+    "type" : "Module",
     "Deprecated" : [
 
     ],
-    "type" : "Module",
     "Constructor" : [
 
     ],
