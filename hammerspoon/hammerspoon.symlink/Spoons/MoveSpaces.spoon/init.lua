@@ -15,9 +15,6 @@ obj.version = "1.0"
 obj.author = "Tyler Thrailkill <tyler.b.thrailkill@gmail.com>"
 obj.license = "MIT - https://opensource.org/licenses/MIT"
 
-function obj:init()
-end
-
 -- Internal function used to find our location, so we know where to load files from
 local function script_path()
     local str = debug.getinfo(2, "S").source:sub(2)

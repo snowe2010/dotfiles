@@ -23,9 +23,7 @@
     "Constructor" : [
 
     ],
-    "items" : [
-
-    ],
+    "doc" : "Move window to the space to the right or left\n\nMuch of the code was written by Szymon Kaliski <hi@szymonkaliski.com>, converted to spoon by Tyler Thrailkill <tyler.b.thrailkill@gmail.com>\n\nhttps:\/\/github.com\/snowe2010",
     "Method" : [
 
     ],
@@ -35,7 +33,9 @@
     "Field" : [
 
     ],
-    "doc" : "Move window to the space to the right or left\n\nMuch of the code was written by Szymon Kaliski <hi@szymonkaliski.com>, converted to spoon by Tyler Thrailkill <tyler.b.thrailkill@gmail.com>\n\nhttps:\/\/github.com\/snowe2010",
+    "items" : [
+
+    ],
     "name" : "Move Spaces"
   }
 ]

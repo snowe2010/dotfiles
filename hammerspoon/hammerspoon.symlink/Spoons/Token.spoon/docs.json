@@ -18,23 +18,61 @@
     "Deprecated" : [
 
     ],
-    "type" : "Module",
     "desc" : "generate google authenticator token value keystrokes",
+    "type" : "Module",
     "Constructor" : [
 
     ],
     "doc" : "generate google authenticator token value keystrokes\nRetrieve a google authenticator token seed from keychain and use this to calculate the current value\nSimulate keystrokes for this token value\n\nwritten by Teun Vink <github@teun.tv>, converted to spoon by Tyler Thrailkill <snowe>\n\nhttps:\/\/github.com\/teunvink\/hammerspoon",
-    "items" : [
+    "Method" : [
+      {
+        "doc" : "Retrieves the password (and optional token) using an OTP code and password stored in the keychain",
+        "stripped_doc" : [
+          "Retrieves the password (and optional token) using an OTP code and password stored in the keychain"
+        ],
+        "def" : "Token:get_password()",
+        "parameters" : [
 
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "Token:get_password()",
+        "type" : "Method",
+        "returns" : [
+
+        ],
+        "name" : "get_password",
+        "desc" : "Retrieves the password (and optional token) using an OTP code and password stored in the keychain"
+      }
     ],
     "Command" : [
 
     ],
-    "Method" : [
-
-    ],
     "Field" : [
 
+    ],
+    "items" : [
+      {
+        "doc" : "Retrieves the password (and optional token) using an OTP code and password stored in the keychain",
+        "stripped_doc" : [
+          "Retrieves the password (and optional token) using an OTP code and password stored in the keychain"
+        ],
+        "def" : "Token:get_password()",
+        "parameters" : [
+
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "Token:get_password()",
+        "type" : "Method",
+        "returns" : [
+
+        ],
+        "name" : "get_password",
+        "desc" : "Retrieves the password (and optional token) using an OTP code and password stored in the keychain"
+      }
     ],
     "name" : "Token"
   }

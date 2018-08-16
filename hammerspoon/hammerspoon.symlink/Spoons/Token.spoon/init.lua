@@ -7,6 +7,7 @@
 --- written by Teun Vink <github@teun.tv>, converted to spoon by Tyler Thrailkill <snowe>
 ---
 --- https://github.com/teunvink/hammerspoon
+
 local obj={}
 obj.__index = obj
 
@@ -43,18 +44,24 @@ function item_from_keychain(name)
 end
 
 -- read a token seed from keychain, generate a code and make keystrokes for it
-function token_keystroke(token_name, pass_name)
+function obj:token_keystroke()
+    local token = self.get_password()
+    -- generate keystrokes for the result
+    hs.eventtap.keyStrokes(token)
+end
+
+--- Token:get_password()
+--- Method
+--- Retrieves the password (and optional token) using an OTP code and password stored in the keychain
+function obj:get_password()
     local token = item_from_keychain(obj.token)
     local hash = gauth.GenCode(token, math.floor(os.time() / 30))
-
-    -- generate keystrokes for the result
-    hs.eventtap.keyStrokes(item_from_keychain(obj.password))
-    hs.eventtap.keyStrokes(("%06d"):format(hash))
+    return item_from_keychain(obj.password) .. ("%06d"):format(hash)
 end
 
 function obj:bindHotkeys(keys)
     hs.hotkey.bindSpec(keys["run"], function()
-        token_keystroke()
+        self.token_keystroke()
     end)
 end
 
