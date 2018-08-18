@@ -49,6 +49,19 @@ end
 function obj:start()
    for i,v in ipairs(self.gridGeometries) do
       self.logger.df("setGrid(%s, %s)", v[1], v[2], v[3])
+      hs.grid.ui.textSize = 50
+      hs.grid.ui.cellColor = {0.34,0.46,0.65,0.1}
+      hs.grid.ui.cellStrokeColor = {0.34, 0.46, 0.65}
+
+    -- hs.grid.ui.textColor = {1,1,1}
+    -- hs.grid.ui.cellColor = {0,0,0,0.25}
+    -- hs.grid.ui.cellStrokeColor = {0,0,0}
+    hs.grid.ui.selectedColor = {0.34,0.46,0.65,0.4} -- for the first selected cell during a modal resize
+    hs.grid.ui.highlightColor = {0.34,0.46,0.65,0.5} -- to highlight the frontmost window behind the grid
+    hs.grid.ui.highlightStrokeColor = {0.14,0.79,0.66,1} -- 36, 201, 168
+    hs.grid.ui.cyclingHighlightColor = {0,0.8,0.8,0.5} -- to highlight the window to be resized, when cycling among windows
+    hs.grid.ui.cyclingHighlightStrokeColor = {0,0.8,0.8,1}
+
       hs.grid.setGrid(v[1], v[2], v[3])
    end
 end

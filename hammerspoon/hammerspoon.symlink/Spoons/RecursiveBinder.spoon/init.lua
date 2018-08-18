@@ -189,6 +189,21 @@ local function createKeyName(key)
    end
 end
 
+-- iterate over pairs by their ordered keys
+function pairsByKeys (t, f)
+    local a = {}
+    for n in pairs(t) do table.insert(a, n) end
+    table.sort(a, f)
+    local i = 0      -- iterator variable
+    local iter = function ()   -- iterator function
+      i = i + 1
+      if a[i] == nil then return nil
+      else return a[i], t[a[i]]
+      end
+    end
+    return iter
+  end
+  
 -- show helper of available keys of current layer
 local function showHelper(keyFuncNameTable)
    -- keyFuncNameTable is a table that key is key name and value is description
@@ -196,7 +211,7 @@ local function showHelper(keyFuncNameTable)
    local separator = '' -- first loop doesn't need to add a separator, because it is in the very front. 
    local lastLine = ''
    local count = 0
-   for keyName, funcName in pairs(keyFuncNameTable) do
+   for keyName, funcName in pairsByKeys(keyFuncNameTable) do
       count = count + 1
       local newEntry = keyName..' → '..funcName
       -- make sure each entry is of the same length

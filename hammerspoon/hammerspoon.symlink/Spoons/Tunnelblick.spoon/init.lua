@@ -36,7 +36,7 @@ obj.username = nil
 --- String connection name
 obj.connection_name = nil
 
---- Tunnelblick:bindHotkeys(mapping)
+--- Tunnelblick:connect()
 --- Method
 --- Performs the connection operation using a username, password, and connection_name
 function obj:connect()
