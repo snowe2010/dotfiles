@@ -79,119 +79,10 @@ Install:andUse("Seal", {
     start = true,
 })
 
-function doIt()
-    local GITHUB_API_PATH = "https://api.github.com"
-    local GITHUB_API_USER = "snowe2010"
-    local GITHUB_API_TOKEN = spoon.Keychain:login_keychain("github_api_key")
-    local GITHUB_REPOS = {
-      "promontech/lp-server"
-    }
-    
-    local rate_limit_percentage
-    
-    local menu_bar_refresh_time = 60
-    local menu_bar = hs.menubar.new()
-    local menu_items = {}
-    
-    menu_bar:setTitle("0")
-    
-    -- Helper: get table length
-    function get_table_length(T)
-      local count = 0
-      for _ in pairs(T) do count = count + 1 end
-      return count
-    end
-    
-    -- Helper: do pull request from Github
-    function get_pull_requests(repo, callback)
-        hs.http.doAsyncRequest(
-            GITHUB_API_PATH .. "/repos/" .. repo .. "/pulls",
-            "GET",
-            "",
-            {
-                Authorization = "Basic " .. hs.base64.encode(GITHUB_API_USER .. ":" .. GITHUB_API_TOKEN)
-            },
-            function (code, body, headers)
-                if code == 200 then
-                    local decoded_body = hs.json.decode(body)
-                    callback(decoded_body)
-                else
-                    print("Error: The code was", code)
-                    print(hs.inspect(headers))
-                    callback(nil)
-                end
-                
-                rate_limit_percentage = 100 - (( headers["X-RateLimit-Remaining"] / headers["X-RateLimit-Limit"] ) * 100)
-                print(tostring(rate_limit_percentage) .. "%", "rate limit used")
-            end
-        )
-    end
-    
-    -- Build menu over again
-    function build_menu()
-        local pull_requests
-    
-        menu_items = {}
-        table.insert(menu_items, {
-            title = "Refresh",
-            fn = function() build_menu() end
-        })
-    
-        for repo_key,repo in pairs(GITHUB_REPOS) do
-            get_pull_requests(repo, function (decoded_body)
-                
-                if decoded_body == nil then
-                    print("There was an error trying to retrieve the pull requests!")
-                end
-    
-                pull_requests = decoded_body
-    
-                for k,v in pairs(pull_requests) do
-                    table.insert(menu_items, {
-                        title = repo .. ": "..v.title,
-                        fn = menu_item_callback(v.number),
-                        number = v.number,
-                        html_url = v.html_url
-                    })
-                end
-    
-                menu_bar:setTitle(tostring(get_table_length(menu_items) - 1))
-                menu_bar:setMenu(menu_items)
-            end)
-        end
-    
-        buildMenuTimer = hs.timer.doAfter(menu_bar_refresh_time, function() build_menu() end)
-    end
-    
-    -- Action: open url in default browser
-    function open_url_in_browser(url)
-        hs.urlevent.openURLWithBundle(url, hs.urlevent.getDefaultHandler('http'))
-    end
-    
-    -- Callback: for menu item
-    function menu_item_callback(item_id)
-        return function()
-            for k,v in pairs(menu_items) do
-                if item_id == v.number then
-                    open_url_in_browser(v.html_url)
-                    return
-                end
-            end
-        end
-    end
-    
-    build_menu()
-end
-
-
 Install:andUse("RecursiveBinder", {
     fn = function(s)
-        -- Curried functions so they aren't called immediately
+        -- Curried function so it isn't called immediately
         id = function(id) return function () hs.application.launchOrFocusByBundleID(id) end end
-        name = function(name) return function () hs.application.launchOrFocus(name) end end
-        key = function(table, key, name, id) 
-            table[s.singleKey(key, name)] = id
-        end
 
         app_keymap = {
             [s.singleKey('s', 'Slack')] = id('com.tinyspeck.slackmacgap'),
@@ -227,7 +118,7 @@ Install:andUse("RecursiveBinder", {
         hs.hotkey.bind('alt', 't', s.recursiveBind(tools_keymap))
         
         bookmarks_keymap = {}
-        hs.hotkey.bind('alt', 't', s.recursiveBind(tools_keymap))
+        hs.hotkey.bind('alt', 'b', s.recursiveBind(bookmarks_keymap))
 
         keymap = {
             [s.singleKey('b')] = bookmarks_keymap,
@@ -249,3 +140,21 @@ Install:andUse("RecursiveBinder", {
 })
 
 hs.hotkey.bindSpec({"alt", "h"}, 'Show Window Hints', function() hs.hints.windowHints() end)
+
+spaces = require("hs._asm.undocumented.spaces")
+spotify_watcher = hs.application.watcher.new(function(app_name, event_type, app)
+    if (app_name == 'Spotify' and hs.application.watcher.launched == event_type) then
+        local win = app:mainWindow()
+        if win ~= nil then
+            local currentSpace = spaces.activeSpace()
+            win:setFullScreen(true)
+            repeat until win:isFullScreen()
+            -- timer = hs.timer.delayed.new(2, function()  end)
+            -- timer:start()
+            spaces.changeToSpace(currentSpace)
+        end
+
+    end
+
+end)
+spotify_watcher:start()
