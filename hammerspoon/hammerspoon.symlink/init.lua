@@ -52,14 +52,9 @@ Install:andUse("Tunnelblick", {
     }
 })
 Install:andUse("Pastebin", {
-    hotkeys = {
-        paste = { "cmd", "1" }
-    },
     config = {
         api_dev_key  = spoon.Keychain:login_keychain("pastebin_dev_key"),
-        api_user_key = spoon.Keychain:login_keychain("pastebin_user_key"),
-        expire       = "N",
-        format       = "dfljkdfklj"
+        api_user_key = spoon.Keychain:login_keychain("pastebin_user_key")
     },
     loglevel = "debug"
 })
@@ -93,10 +88,11 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('l', 'Sublime Text')] = id('com.sublimetext.3'),
             [s.singleKey('m', 'Messages')] = id('com.apple.iChat'),
             [s.singleKey('y', 'Spotify')] = id('com.spotify.client'),
-            [s.singleKey('i', 'Intellij')] = id('com.jetbrains.intellij'),
+            [s.singleKey('i', 'IDEA')] = id('com.jetbrains.intellij'),
             [s.singleKey('g', 'SourceTree')] = id('com.torusknot.SourceTreeNotMAS'),
             [s.singleKey('c', 'VS Code')] = id('com.microsoft.VSCode'),
             [s.singleKey('k', 'Kitematic')] = id('com.electron.kitematic_(beta)'),
+            [s.singleKey('p', 'Postman')] = id('com.postmanlabs.mac')
         }
         hs.hotkey.bind('alt', 'a', s.recursiveBind(app_keymap))
 
@@ -113,7 +109,7 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('h', 'hammerspoon console')] = function() hs.toggleConsole() end,
             [s.singleKey('v', 'paste unblocker')] = function() hs.eventtap.keyStrokes(hs.pasteboard.getContents()) end,
             [s.singleKey('s', 'spotify song')] = function() hs.spotify.displayCurrentTrack() end,
-            [s.singleKey('p', 'pull requests')] = function() doIt() end
+            [s.singleKey('p', 'pastebin')] = function() spoon.Pastebin:paste() end
         }
         hs.hotkey.bind('alt', 't', s.recursiveBind(tools_keymap))
         
@@ -158,3 +154,26 @@ spotify_watcher = hs.application.watcher.new(function(app_name, event_type, app)
 
 end)
 spotify_watcher:start()
+
+--[[
+timer = nil
+hs.timer.doUntil(
+    function() 
+        print(hs.timer.seconds("05:16") < hs.timer.localTime() and hs.timer.seconds("05:15") > hs.timer.localTime())
+        return hs.timer.seconds("05:16") < hs.timer.localTime() and hs.timer.seconds("05:15") > hs.timer.localTime() 
+    end, 
+function() 
+    print(hs.timer.seconds("05:16") < hs.timer.localTime())
+    print('sdflkjsdflkjs')
+    print(hs.timer.seconds("05:15") > hs.timer.localTime())
+    print("hello") 
+    timer = 
+end, 
+1)--]]
+function walk_around_notification() 
+    hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!"}):send()
+end
+for h=8,18 do 
+    hs.timer.doAt(h..":00","1d",walk_around_notification)
+    hs.timer.doAt(h..":30","1d",walk_around_notification) 
+end
