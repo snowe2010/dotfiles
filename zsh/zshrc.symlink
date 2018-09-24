@@ -27,6 +27,10 @@ do
   source $file
 done
 
+# # initialize autocomplete here, otherwise functions won't be loaded
+# autoload -U compinit
+# compinit
+
 # load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
@@ -35,34 +39,6 @@ do
   # ((total = $SECONDS-$firstseconds))
   # echo "file is $file took $total"
 done
-
-# source ~/.zplug/init.zsh
-source "${HOME}/.zgen/zgen.zsh"
-# if the init scipt doesn't exist
-if ! zgen saved; then
-  zgen oh-my-zsh  
-  zgen load mafredri/zsh-async  
-  zgen load lib/completion  
-  zgen load sindresorhus/pure  
-  zgen oh-my-zsh plugins/spring  
-  zgen oh-my-zsh plugins/sublime  
-  zgen oh-my-zsh plugins/themes  
-  zgen oh-my-zsh plugins/wd  
-  zgen oh-my-zsh plugins/git  
-  zgen oh-my-zsh plugins/gitfast
-  zgen oh-my-zsh plugins/grunt
-  zgen oh-my-zsh plugins/jsontools
-  zgen oh-my-zsh plugins/alias-tips
-  zgen load zsh-users/zsh-history-substring-search
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load zsh-users/zsh-autosuggestions
-
-  zgen save
-fi
-
-# # initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
 
 # # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
@@ -78,10 +54,10 @@ eval "$(tmuxifier init -)"
 source $HOME/.cargo/env
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/tylerthrailkill/.nvm/versions/node/v8.4.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/tylerthrailkill/.nvm/versions/node/v8.4.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# [[ -f /Users/tylerthrailkill/.nvm/versions/node/v8.4.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/tylerthrailkill/.nvm/versions/node/v8.4.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/tylerthrailkill/.nvm/versions/node/v8.4.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/tylerthrailkill/.nvm/versions/node/v8.4.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# [[ -f /Users/tylerthrailkill/.nvm/versions/node/v8.4.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/tylerthrailkill/.nvm/versions/node/v8.4.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/tylerthrailkill/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/tylerthrailkill/google-cloud-sdk/path.zsh.inc'; fi
 
