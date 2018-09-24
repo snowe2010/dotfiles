@@ -1,5 +1,7 @@
 export LSCOLORS="exfxcxdxbxegedabagacad"
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=4 # color the autosuggestions better
+
 # ZSH_THEME="edvardm"
 HIST_FIND_NO_DUPS="true"
 DISABLE_AUTO_UPDATE="true"

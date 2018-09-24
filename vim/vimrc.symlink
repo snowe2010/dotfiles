@@ -99,3 +99,6 @@ autocmd InsertLeave * :set relativenumber
 " autocmd BufWinEnter * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
 " autocmd BufReadPre * setl conceallevel=2 concealcursor=nv
 " autocmd BufReadPre * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
+"
+" set pasteboard to mac's system clipboard
+set clipboard=unnamed

@@ -73,8 +73,6 @@ alias -g P="2>&1| pygmentize -l pytb"
 
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
 
 alias h='history'
 alias hgrep="fc -El 0 | grep"
@@ -148,3 +146,7 @@ function authorities() {
   gpsup
   hub pull-request -cp -b develop -a snowe2010 -r dallasacook,zhouij,levans002 -m "[$1] Update authorities" -l authorities
 }
+
+#### git aliases ####
+alias grhh="git reset --hard origin/develop"
+alias gpsup='git push --set-upstream origin $(git_current_branch)'
