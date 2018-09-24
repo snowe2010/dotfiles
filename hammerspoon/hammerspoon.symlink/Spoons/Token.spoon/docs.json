@@ -12,11 +12,13 @@
     "Variable" : [
       {
         "doc" : "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon.",
-        "def" : "Token.logger",
         "stripped_doc" : [
           "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon."
         ],
-        "desc" : "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon.",
+        "def" : "Token.logger",
+        "parameters" : [
+
+        ],
         "notes" : [
 
         ],
@@ -26,17 +28,17 @@
 
         ],
         "name" : "logger",
-        "parameters" : [
-
-        ]
+        "desc" : "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon."
       },
       {
         "doc" : "String indicating the Keychain name of the Shared Key used in the OTP HMAC-SHA1 generation",
-        "def" : "Token.secret_key",
         "stripped_doc" : [
           "String indicating the Keychain name of the Shared Key used in the OTP HMAC-SHA1 generation"
         ],
-        "desc" : "String indicating the Keychain name of the Shared Key used in the OTP HMAC-SHA1 generation",
+        "def" : "Token.secret_key",
+        "parameters" : [
+
+        ],
         "notes" : [
 
         ],
@@ -46,19 +48,17 @@
 
         ],
         "name" : "secret_key",
-        "parameters" : [
-
-        ]
+        "desc" : "String indicating the Keychain name of the Shared Key used in the OTP HMAC-SHA1 generation"
       }
     ],
     "stripped_doc" : [
 
     ],
     "type" : "Module",
-    "desc" : "generate google authenticator token value keystrokes",
     "Deprecated" : [
 
     ],
+    "desc" : "generate google authenticator token value keystrokes",
     "Constructor" : [
 
     ],
@@ -72,11 +72,13 @@
     "items" : [
       {
         "doc" : "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon.",
-        "def" : "Token.logger",
         "stripped_doc" : [
           "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon."
         ],
-        "desc" : "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon.",
+        "def" : "Token.logger",
+        "parameters" : [
+
+        ],
         "notes" : [
 
         ],
@@ -86,17 +88,17 @@
 
         ],
         "name" : "logger",
-        "parameters" : [
-
-        ]
+        "desc" : "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon."
       },
       {
         "doc" : "String indicating the Keychain name of the Shared Key used in the OTP HMAC-SHA1 generation",
-        "def" : "Token.secret_key",
         "stripped_doc" : [
           "String indicating the Keychain name of the Shared Key used in the OTP HMAC-SHA1 generation"
         ],
-        "desc" : "String indicating the Keychain name of the Shared Key used in the OTP HMAC-SHA1 generation",
+        "def" : "Token.secret_key",
+        "parameters" : [
+
+        ],
         "notes" : [
 
         ],
@@ -106,18 +108,19 @@
 
         ],
         "name" : "secret_key",
-        "parameters" : [
-
-        ]
+        "desc" : "String indicating the Keychain name of the Shared Key used in the OTP HMAC-SHA1 generation"
       },
       {
         "doc" : "Binds hotkeys for Token\n\nParameters:\n * mapping - A table containing hotkey modifier\/key details for the following items:\n  * generate - generate and type token",
-        "def" : "Token:bindHotkeys(mapping)",
         "stripped_doc" : [
           "Binds hotkeys for Token",
           ""
         ],
-        "desc" : "Binds hotkeys for Token",
+        "def" : "Token:bindHotkeys(mapping)",
+        "parameters" : [
+          " * mapping - A table containing hotkey modifier\/key details for the following items:",
+          "  * generate - generate and type token"
+        ],
         "notes" : [
 
         ],
@@ -127,18 +130,17 @@
 
         ],
         "name" : "bindHotkeys",
-        "parameters" : [
-          " * mapping - A table containing hotkey modifier\/key details for the following items:",
-          "  * generate - generate and type token"
-        ]
+        "desc" : "Binds hotkeys for Token"
       },
       {
         "doc" : "Retrieves the token using an HOTP\/TOTP Secret Key stored in the keychain",
-        "def" : "Token:get_token()",
         "stripped_doc" : [
           "Retrieves the token using an HOTP\/TOTP Secret Key stored in the keychain"
         ],
-        "desc" : "Retrieves the token using an HOTP\/TOTP Secret Key stored in the keychain",
+        "def" : "Token:get_token()",
+        "parameters" : [
+
+        ],
         "notes" : [
 
         ],
@@ -148,17 +150,17 @@
 
         ],
         "name" : "get_token",
-        "parameters" : [
-
-        ]
+        "desc" : "Retrieves the token using an HOTP\/TOTP Secret Key stored in the keychain"
       },
       {
         "doc" : "read a token secret key from keychain, generate a code and make keystrokes for it",
-        "def" : "Token:token_keystroke()",
         "stripped_doc" : [
           "read a token secret key from keychain, generate a code and make keystrokes for it"
         ],
-        "desc" : "read a token secret key from keychain, generate a code and make keystrokes for it",
+        "def" : "Token:token_keystroke()",
+        "parameters" : [
+
+        ],
         "notes" : [
 
         ],
@@ -168,19 +170,19 @@
 
         ],
         "name" : "token_keystroke",
-        "parameters" : [
-
-        ]
+        "desc" : "read a token secret key from keychain, generate a code and make keystrokes for it"
       }
     ],
     "Method" : [
       {
         "doc" : "read a token secret key from keychain, generate a code and make keystrokes for it",
-        "def" : "Token:token_keystroke()",
         "stripped_doc" : [
           "read a token secret key from keychain, generate a code and make keystrokes for it"
         ],
-        "desc" : "read a token secret key from keychain, generate a code and make keystrokes for it",
+        "def" : "Token:token_keystroke()",
+        "parameters" : [
+
+        ],
         "notes" : [
 
         ],
@@ -190,17 +192,17 @@
 
         ],
         "name" : "token_keystroke",
-        "parameters" : [
-
-        ]
+        "desc" : "read a token secret key from keychain, generate a code and make keystrokes for it"
       },
       {
         "doc" : "Retrieves the token using an HOTP\/TOTP Secret Key stored in the keychain",
-        "def" : "Token:get_token()",
         "stripped_doc" : [
           "Retrieves the token using an HOTP\/TOTP Secret Key stored in the keychain"
         ],
-        "desc" : "Retrieves the token using an HOTP\/TOTP Secret Key stored in the keychain",
+        "def" : "Token:get_token()",
+        "parameters" : [
+
+        ],
         "notes" : [
 
         ],
@@ -210,18 +212,19 @@
 
         ],
         "name" : "get_token",
-        "parameters" : [
-
-        ]
+        "desc" : "Retrieves the token using an HOTP\/TOTP Secret Key stored in the keychain"
       },
       {
         "doc" : "Binds hotkeys for Token\n\nParameters:\n * mapping - A table containing hotkey modifier\/key details for the following items:\n  * generate - generate and type token",
-        "def" : "Token:bindHotkeys(mapping)",
         "stripped_doc" : [
           "Binds hotkeys for Token",
           ""
         ],
-        "desc" : "Binds hotkeys for Token",
+        "def" : "Token:bindHotkeys(mapping)",
+        "parameters" : [
+          " * mapping - A table containing hotkey modifier\/key details for the following items:",
+          "  * generate - generate and type token"
+        ],
         "notes" : [
 
         ],
@@ -231,10 +234,7 @@
 
         ],
         "name" : "bindHotkeys",
-        "parameters" : [
-          " * mapping - A table containing hotkey modifier\/key details for the following items:",
-          "  * generate - generate and type token"
-        ]
+        "desc" : "Binds hotkeys for Token"
       }
     ],
     "name" : "Token"

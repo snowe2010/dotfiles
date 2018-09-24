@@ -22,6 +22,11 @@ Install:andUse("WindowScreenLeftAndRight", {
 })
 Install:andUse("WinWin")
 Install:andUse("CountDown")
+Install:andUse("DismissNotifications", {
+    hotkeys = {
+        all = {hyper, "'"}
+    }
+})
 Install:andUse("FadeLogo", {
     config = {
         default_run = 1.0,
@@ -34,7 +39,11 @@ Install:andUse("Caffeine", {
 })
 spoon.Caffeine:clicked() -- start caffeine by default
 Install:andUse("Keychain")
-Install:andUse("Token", {config = { secret_key = "token_tunnel" }})
+Install:andUse("Token", {
+    hotkeys = {
+        generate = { {"alt", "ctrl"} , "h"}
+    },
+    config = { secret_key = "token_tunnel" }})
 Install:andUse("MoveSpaces", {
     hotkeys = {
         space_right = { {'ctrl','shift'}, '.' },
@@ -89,6 +98,7 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('m', 'Messages')] = id('com.apple.iChat'),
             [s.singleKey('y', 'Spotify')] = id('com.spotify.client'),
             [s.singleKey('i', 'IDEA')] = id('com.jetbrains.intellij'),
+            [s.singleKey('r', 'RubyMine')] = id('com.jetbrains.rubymine'),
             [s.singleKey('g', 'SourceTree')] = id('com.torusknot.SourceTreeNotMAS'),
             [s.singleKey('c', 'VS Code')] = id('com.microsoft.VSCode'),
             [s.singleKey('k', 'Kitematic')] = id('com.electron.kitematic_(beta)'),
@@ -109,7 +119,34 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('h', 'hammerspoon console')] = function() hs.toggleConsole() end,
             [s.singleKey('v', 'paste unblocker')] = function() hs.eventtap.keyStrokes(hs.pasteboard.getContents()) end,
             [s.singleKey('s', 'spotify song')] = function() hs.spotify.displayCurrentTrack() end,
-            [s.singleKey('p', 'pastebin')] = function() spoon.Pastebin:paste() end
+            [s.singleKey('p', 'pastebin')] = function() spoon.Pastebin:paste() end,
+            [s.singleKey('u', 'trigger notification')] = function() hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!", autoWithdraw = false, withdrawAfter = 0}):send() end,
+            [s.singleKey('n', 'notifications')] = {
+                [s.singleKey('a', 'dismiss all')] = function() 
+                hs.osascript.applescript(
+                    string.format(
+                    [[
+                    tell application "System Events" to tell process "Notification Center"
+                        click button 1 in every window
+                    end tell
+                    ]]
+                    )
+                )
+                end,
+                [s.singleKey('s', 'click secondary')] = function()
+                    hs.osascript.applescript(
+                        string.format(
+                            [[
+                            tell application "System Events" to tell process "Notification Center"
+                                try
+                                    click button 2 of last item of windows
+                                end try
+                            end tell
+                        ]]
+                        )
+                    )
+                end
+            }
         }
         hs.hotkey.bind('alt', 't', s.recursiveBind(tools_keymap))
         
@@ -153,27 +190,26 @@ spotify_watcher = hs.application.watcher.new(function(app_name, event_type, app)
     end
 
 end)
-spotify_watcher:start()
+-- spotify_watcher:start()
 
---[[
-timer = nil
-hs.timer.doUntil(
-    function() 
-        print(hs.timer.seconds("05:16") < hs.timer.localTime() and hs.timer.seconds("05:15") > hs.timer.localTime())
-        return hs.timer.seconds("05:16") < hs.timer.localTime() and hs.timer.seconds("05:15") > hs.timer.localTime() 
-    end, 
-function() 
-    print(hs.timer.seconds("05:16") < hs.timer.localTime())
-    print('sdflkjsdflkjs')
-    print(hs.timer.seconds("05:15") > hs.timer.localTime())
-    print("hello") 
-    timer = 
-end, 
-1)--]]
 function walk_around_notification() 
-    hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!"}):send()
+    print("sending notification to take a break")
+    hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!", autoWithdraw = false, withdrawAfter = 0}):send()
 end
+notify_table = {}
 for h=8,18 do 
-    hs.timer.doAt(h..":00","1d",walk_around_notification)
-    hs.timer.doAt(h..":30","1d",walk_around_notification) 
+    print("creating timer for " .. h .. ":00")
+    table.insert(notify_table,
+        hs.timer.doAt(h..":00","1d", function () 
+            print("sending notification to take a break at " .. h .. ": 00")
+            hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!", autoWithdraw = false, withdrawAfter = 0}):send()
+        end)
+    )
+    print("creating timer for " .. h .. ":30")
+    table.insert(notify_table,
+        hs.timer.doAt(h..":30","1d", function () 
+            print("sending notification to take a break at " .. h .. ": 30")
+            hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!", autoWithdraw = false, withdrawAfter = 0}):send()
+        end)
+    ) 
 end

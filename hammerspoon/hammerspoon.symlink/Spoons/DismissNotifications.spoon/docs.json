@@ -1,0 +1,128 @@
+[
+  {
+    "Constant" : [
+
+    ],
+    "submodules" : [
+
+    ],
+    "Function" : [
+
+    ],
+    "Variable" : [
+      {
+        "doc" : "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon.",
+        "parameters" : [
+
+        ],
+        "stripped_doc" : [
+          "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon."
+        ],
+        "def" : "DismissNotifications.logger",
+        "notes" : [
+
+        ],
+        "signature" : "DismissNotifications.logger",
+        "type" : "Variable",
+        "returns" : [
+
+        ],
+        "name" : "logger",
+        "desc" : "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon."
+      }
+    ],
+    "stripped_doc" : [
+
+    ],
+    "Deprecated" : [
+
+    ],
+    "type" : "Module",
+    "desc" : "Send clipboard contents to DismissNotifications",
+    "Constructor" : [
+
+    ],
+    "doc" : "Send clipboard contents to DismissNotifications\n\nConversion of tldm's pastebin gist to a Spoon https:\/\/gist.github.com\/tdlm\/5eba0299f2924a8aaf46\nCode by @tdlm, spoon by Tyler Thrailkill <tyler.b.thrailkill@gmail.com>\n\nhttps:\/\/github.com\/snowe2010",
+    "items" : [
+      {
+        "doc" : "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon.",
+        "parameters" : [
+
+        ],
+        "stripped_doc" : [
+          "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon."
+        ],
+        "def" : "DismissNotifications.logger",
+        "notes" : [
+
+        ],
+        "signature" : "DismissNotifications.logger",
+        "type" : "Variable",
+        "returns" : [
+
+        ],
+        "name" : "logger",
+        "desc" : "Logger object used within the Spoon. Can be accessed to set the default log level for the messages coming from the Spoon."
+      },
+      {
+        "doc" : "Binds hotkeys for DismissNotifications\n\nParameters:\n * mapping - A table containing hotkey objifier\/key details for the following items:\n  * all - dismiss all notifications\n  * top - dismiss the top notification\n  * top_click - click the top notification\n  * top_secondary - click the top notifications second option",
+        "parameters" : [
+          " * mapping - A table containing hotkey objifier\/key details for the following items:",
+          "  * all - dismiss all notifications",
+          "  * top - dismiss the top notification",
+          "  * top_click - click the top notification",
+          "  * top_secondary - click the top notifications second option"
+        ],
+        "stripped_doc" : [
+          "Binds hotkeys for DismissNotifications",
+          ""
+        ],
+        "def" : "DismissNotifications:bindHotkeys(mapping)",
+        "notes" : [
+
+        ],
+        "signature" : "DismissNotifications:bindHotkeys(mapping)",
+        "type" : "Method",
+        "returns" : [
+
+        ],
+        "name" : "bindHotkeys",
+        "desc" : "Binds hotkeys for DismissNotifications"
+      }
+    ],
+    "Command" : [
+
+    ],
+    "Field" : [
+
+    ],
+    "Method" : [
+      {
+        "doc" : "Binds hotkeys for DismissNotifications\n\nParameters:\n * mapping - A table containing hotkey objifier\/key details for the following items:\n  * all - dismiss all notifications\n  * top - dismiss the top notification\n  * top_click - click the top notification\n  * top_secondary - click the top notifications second option",
+        "parameters" : [
+          " * mapping - A table containing hotkey objifier\/key details for the following items:",
+          "  * all - dismiss all notifications",
+          "  * top - dismiss the top notification",
+          "  * top_click - click the top notification",
+          "  * top_secondary - click the top notifications second option"
+        ],
+        "stripped_doc" : [
+          "Binds hotkeys for DismissNotifications",
+          ""
+        ],
+        "def" : "DismissNotifications:bindHotkeys(mapping)",
+        "notes" : [
+
+        ],
+        "signature" : "DismissNotifications:bindHotkeys(mapping)",
+        "type" : "Method",
+        "returns" : [
+
+        ],
+        "name" : "bindHotkeys",
+        "desc" : "Binds hotkeys for DismissNotifications"
+      }
+    ],
+    "name" : "DismissNotifications"
+  }
+]
