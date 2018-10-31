@@ -1,4 +1,6 @@
-# holman does dotfiles
+# snowe does dotfiles
+
+Modified from holman's dotfiles:
 
 Your dotfiles are how you personalize your system. These are mine.
 
@@ -66,6 +68,12 @@ which sets up a few paths that'll be different on your particular machine.
 defaults, and so on. Tweak this script, and occasionally run `dot` from
 time to time to keep your environment fresh and up-to-date. You can find
 this script in `bin/`.
+
+## things to setup manually
+
+iterm requires you to set the 'load' location => `~/.dotfiles/app_preferences`
+i use a custom theme in slack. `
+
 
 ## bugs
 
