@@ -18,6 +18,7 @@ brew 'gradle'
 brew 'httpie'
 brew 'hub'
 brew 'jp2a'
+brew 'jenv'
 brew 'jq'
 brew 'kotlin'
 brew 'libcaca', args: ['with-imlib2']
