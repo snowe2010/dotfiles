@@ -52,7 +52,7 @@ unset config_files
 export PATH="$HOME/.tmuxifier/bin:/Users/tylerthrailkill/Library/Python/3.6/bin:$PATH"
 eval "$(tmuxifier init -)"
 
-source $HOME/.cargo/env
+# source $HOME/.cargo/env
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 # [[ -f /Users/tylerthrailkill/.nvm/versions/node/v8.4.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/tylerthrailkill/.nvm/versions/node/v8.4.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
@@ -67,8 +67,9 @@ if [ -f '/Users/tylerthrailkill/google-cloud-sdk/completion.zsh.inc' ]; then sou
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+# disable temporarily
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
 eval "$(rbenv init -)"
 
 echo $SECONDS
