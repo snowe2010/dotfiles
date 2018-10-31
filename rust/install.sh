@@ -1,2 +1,4 @@
 # install cargo
-curl -sSf https://static.rust-lang.org/rustup.sh | sh 
+if ! command -v cargo &> /dev/null; then
+    curl -sSf https://static.rust-lang.org/rustup.sh | sh 
+fi
