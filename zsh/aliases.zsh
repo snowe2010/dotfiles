@@ -20,7 +20,7 @@ alias kga="k get all"
 alias kgs="k get services"
 alias kl="k logs -f $1"
 alias kdp="k delete pod $1"
-alias gco="gco --no-guess"
+alias gco="git checkout --no-guess"
 
 cgit() {
   c_repos=$(find . -maxdepth 2 -name .git -type d -print | cut -d'/' -f2)
@@ -42,15 +42,16 @@ cgit() {
 #
 
 # ls, the common ones I use a lot shortened for rapid fire usage
+alias ls='exa --long --header --git'
 alias l='ls -lFh'     #size,show type,human readable
-alias la='ls -lAFh'   #long list,show almost all,show type,human readable
-alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
-alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
-alias ll='ls -l'      #long list
+# alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+# alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+# alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
+alias ll='ls -al'      #long list
 alias ldot='ls -ld .*'
-alias lS='ls -1FSsh'
-alias lart='ls -1Fcart'
-alias lrt='ls -1Fcrt'
+# alias lS='ls -1FSsh'
+# alias lart='ls -1Fcart'
+# alias lrt='ls -1Fcrt'
 
 alias zshrc='$EDITOR ~/.zshrc' # Quick access to the ~/.zshrc file
 
@@ -150,3 +151,7 @@ function authorities() {
 #### git aliases ####
 alias grhh="git reset --hard origin/develop"
 alias gpsup='git push --set-upstream origin $(git_current_branch)'
+
+# alias ping="ing"
+alias weather="curl wttr.in/Denver"
+alias cat=bat

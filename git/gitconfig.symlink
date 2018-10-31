@@ -61,3 +61,10 @@
         cmd = /Applications/IntelliJ\\ IDEA.app/Contents/MacOS/idea diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
 [commit]
         gpgsign = true
+[emailprompt "tyler.thrailkill@promontech.com"]
+	prompt = 💄
+[emailprompt "tyler.b.thrailkill@gmail.com"]
+	prompt = 👠
+[advice]
+	pushNonFastForward = false
+	statusHints = false

@@ -102,7 +102,8 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('g', 'SourceTree')] = id('com.torusknot.SourceTreeNotMAS'),
             [s.singleKey('c', 'VS Code')] = id('com.microsoft.VSCode'),
             [s.singleKey('k', 'Kitematic')] = id('com.electron.kitematic_(beta)'),
-            [s.singleKey('p', 'Postman')] = id('com.postmanlabs.mac')
+            [s.singleKey('p', 'Postman')] = id('com.postmanlabs.mac'),
+            [s.singleKey('o', 'Canary')] = id('com.google.Chrome.canary'),
         }
         hs.hotkey.bind('alt', 'a', s.recursiveBind(app_keymap))
 

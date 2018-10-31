@@ -1,5 +1,6 @@
 typeset -F SECONDS
  
+ echo $SECONDS
 # to profile slowness use
 # env ZSH_PROF= zsh -ic zprof
 if [[ -v ZSH_PROF ]]; then
@@ -28,8 +29,8 @@ do
 done
 
 # # initialize autocomplete here, otherwise functions won't be loaded
-# autoload -U compinit
-# compinit
+autoload -U compinit
+compinit
 
 # load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
@@ -69,3 +70,5 @@ if [ -f '/Users/tylerthrailkill/google-cloud-sdk/completion.zsh.inc' ]; then sou
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 eval "$(rbenv init -)"
+
+echo $SECONDS

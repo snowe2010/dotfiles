@@ -46,8 +46,11 @@ setopt hist_ignore_dups # ignore duplication command history list
 
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word
-bindkey '^[[5D' beginning-of-line
-bindkey '^[[5C' end-of-line
+
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+#bindkey '^[[5D' beginning-of-line
+# bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^?' backward-delete-char
 bindkey "^[[A" up-line-or-search
