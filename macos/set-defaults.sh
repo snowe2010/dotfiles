@@ -78,7 +78,7 @@ defaults write com.apple.finder NewWindowTarget -string "PfLo"
 # default: 
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Documents/"
 
-### Show icons for hard drives, servers, and removable media on the desktop
+### Hide all icons on the desktop
 # default: -bool true
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 # default: -bool false
@@ -87,6 +87,8 @@ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 # default: -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
+# default: no default
+defaults write com.apple.finder CreateDesktop -bool false
 
 ## Finder: show hidden files by default
 # default: -bool false
@@ -207,3 +209,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	General -bool true \
 	OpenWith -bool true \
 	Privileges -bool true
+
+# Dock: don't minimize to dock
+# default: -bool false
+defaults write com.apple.dock minimize-to-application -bool true

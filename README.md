@@ -72,7 +72,7 @@ this script in `bin/`.
 ## things to setup manually
 
 iterm requires you to set the 'load' location => `~/.dotfiles/app_preferences`
-i use a custom theme in slack. `
+token_tunnel and token_tunnel_pass need to be copied from icloud keychain to login keychain
 
 
 ## bugs

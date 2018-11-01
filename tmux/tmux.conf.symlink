@@ -1,0 +1,100 @@
+# window splitting
+unbind %
+bind \ split-window -h
+unbind '"'
+bind - split-window -v
+
+# remap prefix to Control + u
+set -g prefix C-j
+# bind 'C-u C-u' to type 'C-u'
+# bind C-u send-prefix
+unbind C-b
+
+# bind -n C-k clear-history
+bind -n C-k send-keys -R \; send-keys C-l \; clear-history
+
+# vim movement up
+unbind [
+bind i copy-mode
+unbind p
+bind p paste-buffer
+# bind-key -t vi-copy 'v' begin-selection
+#bind-key -T copy-mode-vi 'y' send-keys -X copy-pipe-and-cancel 'reattach-to-user-namespace pbcopy'
+#bind-key -t vi-copy 'y' copy-selection
+bind-key -Tcopy-mode-vi 'v' send -X begin-selection
+bind-key -Tcopy-mode-vi 'y' send -X copy-selection
+
+# smart pane switching with awareness of vim splits
+#bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-h) || tmux select-pane -L"
+#bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-j) || tmux select-pane -D"
+#bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-k) || tmux select-pane -U"
+#bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-l) || tmux select-pane -R"
+#bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys 'C-\\') || tmux select-pane -l"
+#bind h select-pane -L
+#bind j select-pane -D
+#bind k select-pane -U
+#bind l select-pane -R
+
+bind -n M-j select-pane -L
+bind -n M-l select-pane -R
+bind -n M-i select-pane -U
+bind -n M-k select-pane -D
+
+set -g status-right '#[fg=cyan,bold] #U@#H #[default]#[fg=blue]#(tmux display-message -p "#{pane_current_path}" | sed "s#$HOME#~#g") #[fg=red]%H:%M %d-%b-%y#[default]'
+
+set-option -g default-command "which reattach-to-user-namespace > /dev/null && reattach-to-user-namespace -l $SHELL || $SHELL"
+
+set -g default-command "reattach-to-user-namespace -l ${SHELL}"
+set -g default-shell $SHELL
+set-option -g history-limit 100000
+
+
+
+
+# ####### #
+# Plugins #
+# ####### #
+
+set -g @tpm_plugins "                 \
+  tmux-plugins/tpm                    \
+  soyuka/tmux-current-pane-hostname     \
+"
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+set -g @continuum-restore 'on' # Automatically Restore previously Saved Tmux Sessions
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+# # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+
+
+# Set starting index for windows to 1
+set -g base-index 1
+
+# add reload shortcut
+bind r source ~/.tmux.conf\; display "~/.tmux.conf sourced!"
+
+# Set TERM colors
+set -g default-terminal "screen-256color"
+
+# rename window based on active pane
+set-window-option -g automatic-rename
+
+
+# ####### #
+# Styling #
+# ####### #
+
+set -g pane-border-fg colour235
+set -g pane-border-bg default
+#set -g pane-active-border-fg green
+#set -g pane-active-border-bg black
+set -g status-style fg=white,bg=default
+set -g pane-active-border-style fg=magenta,bg=default
