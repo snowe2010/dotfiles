@@ -30,6 +30,7 @@ brew 'postgresql'
 brew 'puma/puma/puma-dev'
 brew 'rbenv'
 brew 'readline'
+brew 'reattach-to-user-namespace' # fixes pbcopy and pbpaste in tmux
 brew 'roundup'
 brew 'ruby-build'
 brew 'spaceman-diff'
