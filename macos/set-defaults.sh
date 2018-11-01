@@ -45,3 +45,16 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on
+
+# show hidden files by default
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+###############
+# Tunnelblick #
+###############
+
+# set vpn settings
+defaults write net.tunnelblick.tunnelblick "promontech-openvpn-test-doNotDisconnectOnSleep" -int 1 
+defaults write net.tunnelblick.tunnelblick "promontech-openvpn-test-doNotReconnectOnWakeFromSleep" -int 1                                                                                                     👠
+defaults write net.tunnelblick.tunnelblick "promontech-openvpn-test-doNotDisconnectOnFastUserSwitch" -int 1                                                                                                   👠
+
