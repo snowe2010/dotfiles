@@ -52,7 +52,7 @@ cask 'flux'
 cask 'google-chrome'
 cask 'hammerspoon'
 cask 'hyperswitch'
-cask 'istat-menus'
+cask 'istat-menus' # might need sudo spctl --master-disable
 cask 'iterm2'
 cask 'karabiner-elements'
 cask 'jetbrains-toolbox'
