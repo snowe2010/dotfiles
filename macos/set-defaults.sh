@@ -39,3 +39,9 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 # defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 # defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
 # defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+# Restart automatically if the computer freezes
+sudo systemsetup -setrestartfreeze on
