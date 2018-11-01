@@ -84,7 +84,7 @@ defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 # default: -bool false
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 # default: no default
-# defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 # default: -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
