@@ -71,9 +71,32 @@ this script in `bin/`.
 
 ## things to setup manually
 
-iterm requires you to set the 'load' location => `~/.dotfiles/app_preferences`
+iTerm requires you to set the 'load' location => `~/.dotfiles/app_preferences`
 token_tunnel and token_tunnel_pass need to be copied from icloud keychain to login keychain
+fzf must be set up `$(brew --prefix)/opt/fzf/install`
+ripgrep must be installed or zsh _*will not start*_!
 
+### logins
+
+several things need to be logged into
+
+* Dropbox
+* Jetbrains Toolbox
+* Slack
+* Chrome
+* Firefox Sync
+* Spotify
+
+### licenses
+
+several licenses need to be set up
+
+* BetterTouchTool
+* Fantastical 2
+* iStat Menus
+* Sublime Text 3
+* Bartender 3
+* Postbox
 
 ## bugs
 

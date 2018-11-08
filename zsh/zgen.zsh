@@ -22,7 +22,7 @@ if ! zgen saved; then
   zgen load mroth/git-prompt-useremail                # notifies which email will be used for git commit
   zgen load caarlos0/zsh-git-sync                     # sync with upstream fork
   zgen load packruler/zsh-git-scripts                 # remove merged branches, squash branch
-  #zgen load jedahan/ripz                              # alias tips in rust. requires ripgrep
+  zgen load jedahan/ripz                              # alias tips in rust. requires ripgrep
   zgen load peterhurford/up.zsh                       # cd up easier: up 1, up 3, etc.
 
   # Testing
