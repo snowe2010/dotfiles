@@ -101,7 +101,7 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('r', 'RubyMine')] = id('com.jetbrains.rubymine'),
             [s.singleKey('g', 'SourceTree')] = id('com.torusknot.SourceTreeNotMAS'),
             [s.singleKey('c', 'VS Code')] = id('com.microsoft.VSCode'),
-            [s.singleKey('k', 'Kitematic')] = id('com.electron.kitematic_(beta)'),
+            [s.singleKey('k', 'Kitematic')] = id('com.electron.kitematic'),
             [s.singleKey('p', 'Postman')] = id('com.postmanlabs.mac'),
             [s.singleKey('o', 'Canary')] = id('com.google.Chrome.canary'),
         }
