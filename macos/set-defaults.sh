@@ -329,3 +329,5 @@ defaults write com.apple.dock wvous-br-modifier -int 3
 # Change space switching from slide to fade
 # default: -int 0
 defaults write com.apple.universalaccess reduceMotion -int 1
+
+defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
