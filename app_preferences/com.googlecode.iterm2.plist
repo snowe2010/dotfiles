@@ -33159,7 +33159,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/tylerthrailkill/Documents/dev/code</string>
+			<string>/Users/tyler.thrailkill/Documents/</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -35918,7 +35918,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-11-07T18:22:53Z</date>
+	<date>2018-11-12T20:23:21Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Selection Respects Soft Boundaries</key>
