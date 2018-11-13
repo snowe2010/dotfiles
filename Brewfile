@@ -62,3 +62,4 @@ cask 'visual-studio-code'
 
 mas "GIF Brewery 3 by Gfycat (3.9.2)", id: 1081413713 
 mas "The Unarchiver", id: 425424353
+mas "LastPass Password Manager", id: 926036361

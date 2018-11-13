@@ -9,8 +9,8 @@ tap 'promontech/promontech', 'git@github.com:promontech/homebrew-promontech.git'
 cask 'xquartz' # required for libcaca
 cask 'java8'   # required for gradle
 
-brew 'docker'
 brew 'gradle'
+brew 'groovy'
 brew 'hub'
 brew 'jp2a'
 brew 'jenv'
@@ -23,5 +23,7 @@ brew 'node'
 brew 'postgresql'
 brew 'pt-cli', args: ['HEAD']
 
+cask 'docker'
 cask 'google-drive-file-stream'
+cask 'kitematic'
 cask 'tunnelblick'
