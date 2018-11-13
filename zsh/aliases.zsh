@@ -155,3 +155,4 @@ alias gpsup='git push --set-upstream origin $(git_current_branch)'
 # alias ping="ing"
 alias weather="curl wttr.in/Denver"
 alias cat=bat
+alias b="./gradlew build"
