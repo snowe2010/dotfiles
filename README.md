@@ -86,6 +86,8 @@ several things need to be logged into
 * Chrome
 * Firefox Sync
 * Spotify
+* Docker
+* Docker CLI
 
 ### licenses
 
@@ -97,6 +99,12 @@ several licenses need to be set up
 * Sublime Text 3
 * Bartender 3
 * Postbox
+
+### Changes
+
+several settings need to be changed manually
+
+* Docker: set Ram to 4GB+
 
 ## bugs
 
