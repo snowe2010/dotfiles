@@ -1,24 +1,35 @@
-# awesome-hammerspoon configuration
+# Hammerspoon
 
-awesome-hammerspoon is my configuration for [Hammerspoon](http://www.hammerspoon.org/). It has highly modal-based, vim-style keybindings, provides some functionality like desktop widgets, window management, application launcher, instant search, aria2 frontend ... etc.
+I have written my own version of a Hammerspoon configuration using [zzamboni](https://zzamboni.org/post/my-hammerspoon-configuration-with-commentary/) as inspiration.
+
+It is based mainly around RecursiveBinder used to provide nested shortcuts to many parts of the OS. I have also written several of my own spoons which have been 
+merged up to the mainline repo. 
 
 ## Get started
 
 1. Install [Hammerspoon](http://www.hammerspoon.org/) first.
 
-2. `git clone --depth 1 https://github.com/ashfinal/awesome-hammerspoon.git ~/.hammerspoon`
+2. `git clone --depth 1 https://github.com/snowe2010/dotfiles.git /tmp/dotfiles`
 
-3. Reload the configutation.
+3. `cp /tmp/dotfiles/hammerspoon/hammerspoon.symlink ~/.hammerspoon`
 
-## Keep update
+4. Reload the configuration.
 
-`cd ~/.hammerspoon && git pull`
+5. Look through `init.lua` to figure out what you want to keep or not.
+
+Things you'll need to set up first:
+
+* Hyper and meh keys
+* Grid layout
+* Keychain entries
+* Tunnelblick username and connection name
+* Pastebin api keys
 
 ## How to use
 
-Just press <kbd>opt</kbd>, plus <kbd>A</kbd> or <kbd>C</kbd> or <kbd>R</kbd>… to start. If need help, press <kbd>tab</kbd> to toggle the keybindings cheatsheet.
+Just press <kbd>opt</kbd>, plus <kbd>a</kbd> or <kbd>t</kbd> or <kbd>r</kbd>… to start. You can press <kbd>esc</kbd> to exit.
 
-Press <kbd>opt</kbd> + <kbd>?</kbd> to toggle the help panel, which will show all <kbd>opt</kbd> related keybindings.
+Press <kbd>opt</kbd> + <kbd>f</kbd> to show all <kbd>opt</kbd> related keybindings in a nested navigatable format.
 
 ### Screenshots
 
@@ -51,45 +62,20 @@ These screenshots demostrate what awesome-hammerspoon is capable of. Learn more 
 
 </details>
 
-#### aria2 Frontend <kbd>⌥</kbd> + <kbd>D</kbd>
-
-<details>
-<summary>More details</summary>
-
-![hsearch](https://github.com/ashfinal/bindata/raw/master/screenshots/awesome-hammerspoon-aria2.png)
-
-You need to [run aria2 with RPC enabled](https://github.com/ashfinal/awesome-hammerspoon/wiki/Run-aria2-with-rpc-enabled) before using this. Config aria2 host and token in `~/.hammerspoon/private/config.lua`, then you're ready to go.
-
-```lua
-hsaria2_host = "http://localhost:6800/jsonrpc" -- default host
-hsaria2_secret = "token" -- YOUR OWN SECRET
-```
-
-</details>
-
 ## Customization
 
 <details>
 
 <summary>More details</summary>
 
-```shell
-cp ~/.hammerspooon/config-example.lua ~/.hammerspoon/private/config.lua
-```
+Customization is pretty easy. Just update the `init.lua` file. Comment out what you don't like, change the keybindings if you want, etc.
 
-Then modify the file `~/.hammerspoon/private/config.lua`:
+Adding and removing spoons is really easy. Just comment out the spoons you don't want. If you want a new spoon, just specify it using the SpoonInstall
+spoon and supply a config if the spoon demands it. `Install:andUse("<spoonname>", {<config>})`
 
-- Add/remove Spoons.
+*Lots of Spoons are located at [official spoon repository](http://www.hammerspoon.org/Spoons/) (you may need a little config before using them).*
 
-  Define `hspoon_list` to decide which Spoons (a distributing format of Hammerspoon module) to be loaded. There are 15 built-in Spoons, learn about them at [here](https://github.com/ashfinal/awesome-hammerspoon/wiki/The-built-in-Spoons).
-
-  *There are more Spoons at [official spoon repository](http://www.hammerspoon.org/Spoons/) (you may need a little config before using them).*
-
-- Customize keybindings
-
-  Please read `~/.hammerspoon/private/config.lua`for more details.
-
-Finally press `cmd + ctrl + shift + r` to reload the configuration.
+Finally press `cmd + ctrl + shift + r` to reload the configuration. Of course, this is configurable as well. 
 
 </details>
 

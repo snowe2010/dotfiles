@@ -64,6 +64,7 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @continuum-save-interval '1'
 
 set -g @continuum-restore 'on' # Automatically Restore previously Saved Tmux Sessions
 

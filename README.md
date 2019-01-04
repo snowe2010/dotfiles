@@ -100,6 +100,12 @@ several licenses need to be set up
 * Bartender 3
 * Postbox
 
+### Browser plugins
+
+#### User Styles
+
+https://raw.githubusercontent.com/StylishThemes/GitHub-FixedHeader/master/github-fixed-header.user.css
+
 ### Changes
 
 several settings need to be changed manually

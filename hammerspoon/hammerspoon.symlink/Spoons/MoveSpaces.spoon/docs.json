@@ -15,25 +15,25 @@
     "stripped_doc" : [
 
     ],
+    "desc" : "Move window to the space to the right or left",
     "Deprecated" : [
 
     ],
     "type" : "Module",
-    "desc" : "Move window to the space to the right or left",
     "Constructor" : [
 
     ],
-    "doc" : "Move window to the space to the right or left\n\nMuch of the code was written by Szymon Kaliski <hi@szymonkaliski.com>, converted to spoon by Tyler Thrailkill <tyler.b.thrailkill@gmail.com>\n\nhttps:\/\/github.com\/snowe2010",
-    "Method" : [
-
-    ],
-    "Command" : [
+    "items" : [
 
     ],
     "Field" : [
 
     ],
-    "items" : [
+    "Method" : [
+
+    ],
+    "doc" : "Move window to the space to the right or left\n\nMuch of the code was written by Szymon Kaliski <hi@szymonkaliski.com>, converted to spoon by Tyler Thrailkill <tyler.b.thrailkill@gmail.com>\n\nhttps:\/\/github.com\/snowe2010",
+    "Command" : [
 
     ],
     "name" : "Move Spaces"

@@ -156,3 +156,7 @@ alias gpsup='git push --set-upstream origin $(git_current_branch)'
 alias weather="curl wttr.in/Denver"
 alias cat=bat
 alias b="./gradlew build"
+
+function spam() {
+  whois $1 | grep "Registrar Abuse Contact Email"
+}
