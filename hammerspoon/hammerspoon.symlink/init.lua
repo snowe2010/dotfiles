@@ -3,6 +3,8 @@ hs.hints.showTitleThresh = 0
 hs.window.animationDuration = 0
 hs.logger.defaultLogLevel = "info"
 
+local window = require 'hs.window'
+
 hyper = {"cmd", "alt", "shift", "ctrl"}
 meh = {"alt", "shift", "ctrl"}
 
@@ -111,6 +113,13 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('f', 'fullscreen')] = function() spoon.WinWin:stash() spoon.WinWin:moveAndResize("fullscreen") end,
             [s.singleKey('h', 'Lefthalf of Screen')] = function() spoon.WinWin:stash() spoon.WinWin:moveAndResize("halfleft") end,
             [s.singleKey('l', 'Righthalf of Screen')] = function() spoon.WinWin:stash() spoon.WinWin:moveAndResize("halfright") end,
+            [s.singleKey('space', 'super fullscreen')] = function() 
+                local win = window.focusedWindow()
+                -- println(win)
+                if win ~= nil then
+                    win:setFullScreen(not win:isFullScreen())
+                end
+            end,
         }
         hs.hotkey.bind('alt', 'r', s.recursiveBind(resize_keymap))
 
