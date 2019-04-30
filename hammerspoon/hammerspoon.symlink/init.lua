@@ -91,7 +91,7 @@ Install:andUse("RecursiveBinder", {
         id = function(id) return function () hs.application.launchOrFocusByBundleID(id) end end
 
         app_keymap = {
-            [s.singleKey('s', 'Slack')] = id('com.tinyspeck.slackmacgap'),
+            [s.singleKey('s', 'Electron')] = id('com.thegoddessinari.rambox'),
             [s.singleKey('d', 'Fantastical')] = id('com.flexibits.fantastical2.mac'),
             [s.singleKey('f', 'Firefox')] = id('org.mozilla.firefox'),
             [s.singleKey('t', 'iTerm')] = id('com.googlecode.iterm2'),
@@ -105,7 +105,8 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('c', 'VS Code')] = id('com.microsoft.VSCode'),
             [s.singleKey('k', 'Kitematic')] = id('com.electron.kitematic'),
             [s.singleKey('p', 'Postman')] = id('com.postmanlabs.mac'),
-            [s.singleKey('o', 'Canary')] = id('com.google.Chrome.canary'),
+            [s.singleKey('o', 'OneNote')] = id('com.microsoft.onenote.mac'),
+            [s.singleKey('n', 'Canary')] = id('com.google.Chrome.canary'),
         }
         hs.hotkey.bind('alt', 'a', s.recursiveBind(app_keymap))
 
