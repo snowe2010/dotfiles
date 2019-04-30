@@ -49,7 +49,7 @@ done
 
 unset config_files
 
-export PATH="$HOME/.tmuxifier/bin:/Users/tylerthrailkill/Library/Python/3.6/bin:/usr/local/share/dotnet:$PATH"
+export PATH="/usr/local/bin:$HOME/.tmuxifier/bin:/Users/tylerthrailkill/Library/Python/3.6/bin:/usr/local/share/dotnet:$PATH"
 eval "$(tmuxifier init -)"
 
 # source $HOME/.cargo/env
@@ -70,6 +70,10 @@ if [ -f '/Users/tylerthrailkill/google-cloud-sdk/completion.zsh.inc' ]; then sou
 # disable temporarily
 # export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init -)"
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
+
+ssh-add -K ~/.ssh/promontech_github
 
 echo $SECONDS
+# added by travis gem
+[ -f /Users/tyler.thrailkill/.travis/travis.sh ] && source /Users/tyler.thrailkill/.travis/travis.sh
