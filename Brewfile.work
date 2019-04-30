@@ -23,7 +23,7 @@ brew 'node'
 brew 'postgresql'
 brew 'pt-cli', args: ['HEAD']
 
-cask 'graphiql
+cask 'graphiql'
 cask 'docker'
 cask 'google-drive-file-stream'
 cask 'kitematic'
