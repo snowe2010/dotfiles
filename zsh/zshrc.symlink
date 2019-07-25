@@ -70,10 +70,16 @@ if [ -f '/Users/tylerthrailkill/google-cloud-sdk/completion.zsh.inc' ]; then sou
 # disable temporarily
 # export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init -)"
-#eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 ssh-add -K ~/.ssh/promontech_github
 
 echo $SECONDS
 # added by travis gem
 [ -f /Users/tyler.thrailkill/.travis/travis.sh ] && source /Users/tyler.thrailkill/.travis/travis.sh
+
+# npm
+export NVM_DIR="$(brew --prefix nvm)"; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+export PATH=/usr/local/opt/nvm/versions/node/v10.16.0/bin:$PATH:/usr/local/Cellar/nvm/0.34.0/versions/node/v10.16.0/bin:/Users/tyler.thrailkill/.node/bin
+#eval "$(pyenv init -)"
+
