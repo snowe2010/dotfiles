@@ -14,6 +14,7 @@ obj.name = "MoveSpaces"
 obj.version = "1.0"
 obj.author = "Tyler Thrailkill <tyler.b.thrailkill@gmail.com>"
 obj.license = "MIT - https://opensource.org/licenses/MIT"
+obj.logger = hs.logger.new('DismissNotifications', 'debug')
 
 -- Internal function used to find our location, so we know where to load files from
 local function script_path()
@@ -75,7 +76,7 @@ local function moveToSpace(win, direction)
     hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseDown, clickPoint):post()
     hs.timer.usleep(sleepTime)
 
-    hs.eventtap.keyStroke({"cmd", "ctrl"}, direction == "east" and "right" or "left")
+    hs.eventtap.keyStroke({"fn", "cmd", "ctrl"}, direction == "east" and "right" or "left")
 
     hs.timer.waitUntil(
         function()
