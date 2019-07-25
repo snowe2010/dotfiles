@@ -1,6 +1,6 @@
 # window splitting
 unbind %
-bind \ split-window -h
+bind '\' split-window -h
 unbind '"'
 bind - split-window -v
 

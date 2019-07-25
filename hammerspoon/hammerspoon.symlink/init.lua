@@ -224,3 +224,6 @@ for h=8,18 do
         end)
     ) 
 end
+
+-- bundleID = "com.google.Chrome.app.Default-ffkcnngijbamigpamhifoipldnddpfbj"
+-- hs.urlevent.openURLWithBundle("https://promontech.atlassian.net/browse/LP-14215", bundleID)

@@ -31837,9 +31837,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1410 596 620 622 0 0 3440 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1079 173 918 423 -1680 -382 1680 1027 </string>
+	<string>1798 817 1016 512 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 3440 1417 0 0 3440 1417 </string>
+	<string>1037 17 2392 1395 0 0 3440 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -35057,7 +35057,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MesloLGMDZ-RegularForPowerline 24</string>
+			<string>Menlo-Regular 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -35917,6 +35917,8 @@
 	<true/>
 	<key>RightCommand</key>
 	<integer>8</integer>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -35926,7 +35928,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-01-22T20:37:26Z</date>
+	<date>2019-06-17T01:42:44Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Selection Respects Soft Boundaries</key>
@@ -35958,7 +35960,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.6</string>
+	<string>3.2.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

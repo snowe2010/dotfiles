@@ -161,3 +161,6 @@ alias bp="./gradlew build publishToMavenLocal"
 function spam() {
   whois $1 | grep "Registrar Abuse Contact Email"
 }
+
+alias wip="git add --all && git commit -m \"wip\" && gc"
+alias prune="git branch --merged >/tmp/merged-branches && vim /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
