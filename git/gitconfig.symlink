@@ -67,7 +67,7 @@
 [commit]
         gpgsign = true
 [emailprompt "tyler.thrailkill@promontech.com"]
-	prompt = 💄
+	prompt = 💜
 [emailprompt "tyler.b.thrailkill@gmail.com"]
 	prompt = 👠
 [advice]
