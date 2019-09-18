@@ -69,6 +69,17 @@ Install:andUse("Pastebin", {
     },
     loglevel = "debug"
 })
+Install:andUse(
+  "PersonalHotspot",
+  {
+    config = {
+      hotspotName = "Tyler’s Phone",
+      appsToKill = {
+        "Dropbox"
+      }
+    }
+  }
+)
 Install:andUse("Seal", {
     hotkeys = { show = { {"cmd"}, "space" } },
     fn = function(s)
@@ -108,13 +119,13 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('o', 'OneNote')] = id('com.microsoft.onenote.mac'),
             [s.singleKey('n', 'Canary')] = id('com.google.Chrome.canary'),
         }
-        hs.hotkey.bind('alt', 'a', s.recursiveBind(app_keymap))
+        hs.hotkey.bind('alt', 'f', s.recursiveBind(app_keymap))
 
         resize_keymap = {
             [s.singleKey('f', 'fullscreen')] = function() spoon.WinWin:stash() spoon.WinWin:moveAndResize("fullscreen") end,
             [s.singleKey('h', 'Lefthalf of Screen')] = function() spoon.WinWin:stash() spoon.WinWin:moveAndResize("halfleft") end,
             [s.singleKey('l', 'Righthalf of Screen')] = function() spoon.WinWin:stash() spoon.WinWin:moveAndResize("halfright") end,
-            [s.singleKey('space', 'super fullscreen')] = function() 
+            [s.singleKey('space', 'super fulls creen')] = function() 
                 local win = window.focusedWindow()
                 -- println(win)
                 if win ~= nil then
@@ -131,6 +142,7 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('v', 'paste unblocker')] = function() hs.eventtap.keyStrokes(hs.pasteboard.getContents()) end,
             [s.singleKey('s', 'spotify song')] = function() hs.spotify.displayCurrentTrack() end,
             [s.singleKey('p', 'pastebin')] = function() spoon.Pastebin:paste() end,
+            [s.singleKey('h', 'hotspot')] = function() spoon.PersonalHotspot:toggle() end,
             [s.singleKey('u', 'trigger notification')] = function() hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!", autoWithdraw = false, withdrawAfter = 0}):send() end,
             [s.singleKey('n', 'notifications')] = {
                 [s.singleKey('a', 'dismiss all')] = function() 
@@ -179,7 +191,7 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('r', 'resize+')] = resize_keymap,
         }
 
-        hs.hotkey.bind('alt', 'f', s.recursiveBind(keymap))
+        hs.hotkey.bind('alt', 'q', s.recursiveBind(keymap))
     end
 })
 
