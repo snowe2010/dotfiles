@@ -132,7 +132,7 @@ alias gup="git pull -r -p --autostash"
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 
 function pssh() {
-  ssh -i ~/.ssh/jumpcloud tyler.thrailkill@$1 $2
+  ssh -i ~/.ssh/jumpcloud tyler.thrailkill@$1 $2 -t -- /bin/sh -c 'tmux has-session && exec tmux attach || exec tmux'
 }
 
 function pr() {
