@@ -59,7 +59,7 @@ Install:andUse("Tunnelblick", {
     config = {
         username        = "tyler.thrailkill",
         password_fn     = function() return spoon.Keychain:login_keychain("token_tunnel_pass") .. spoon.Token:get_token() end,
-        connection_name = "promontech-openvpn-test"
+        connection_name = "promontech-openvpn"
     }
 })
 Install:andUse("Pastebin", {
