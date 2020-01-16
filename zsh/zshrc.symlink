@@ -1,6 +1,7 @@
 typeset -F SECONDS
  
- echo $SECONDS
+echo $SECONDS
+
 # to profile slowness use
 # env ZSH_PROF= zsh -ic zprof
 if [[ -v ZSH_PROF ]]; then
@@ -38,7 +39,7 @@ do
 	# firstseconds=$SECONDS
   source $file
   # ((total = $SECONDS-$firstseconds))
-  # echo "file is $file took $total"
+  echo "file is $file took $total"
 done
 
 # # load every completion after autocomplete loads
@@ -49,8 +50,9 @@ done
 
 unset config_files
 
-export PATH="/usr/local/bin:$HOME/.tmuxifier/bin:/Users/tylerthrailkill/Library/Python/3.6/bin:/usr/local/share/dotnet:/Users/tylerthrailkill/.cargo/bin:$PATH"
+export PATH="$HOME/.tmuxifier/bin:/Users/tylerthrailkill/Library/Python/3.6/bin:$PATH"
 eval "$(tmuxifier init -)"
+
 
 # source $HOME/.cargo/env
 # tabtab source for serverless package
@@ -79,9 +81,9 @@ echo $SECONDS
 
 # npm
 export NVM_DIR="$(brew --prefix nvm)"; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-export PATH=/usr/local/opt/nvm/versions/node/v10.16.0/bin:$PATH:/usr/local/Cellar/nvm/0.34.0/versions/node/v10.16.0/bin:/Users/tyler.thrailkill/.node/bin
+export PATH="/usr/local/opt/nvm/versions/node/v10.16.0/bin:/usr/local/Cellar/nvm/0.34.0/versions/node/v10.16.0/bin:/Users/tyler.thrailkill/.node/bin:$PATH"
 #eval "$(pyenv init -)"
 
 # remove rbenv here to use system ruby (2.7.3dev)
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

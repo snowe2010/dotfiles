@@ -110,7 +110,7 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('l', 'Sublime Text')] = id('com.sublimetext.3'),
             [s.singleKey('m', 'Messages')] = id('com.apple.iChat'),
             [s.singleKey('y', 'Spotify')] = id('com.spotify.client'),
-            [s.singleKey('i', 'IDEA')] = id('com.jetbrains.intellij'),
+            [s.singleKey('i', 'IDEA')] = id('com.jetbrains.intellij-EAP'),
             [s.singleKey('r', 'RubyMine')] = id('com.jetbrains.rubymine'),
             [s.singleKey('g', 'SourceTree')] = id('com.torusknot.SourceTreeNotMAS'),
             [s.singleKey('c', 'VS Code')] = id('com.microsoft.VSCode'),

@@ -164,3 +164,7 @@ function spam() {
 
 alias wip="git add --all && git commit -m \"wip\" && gc"
 alias prune="git branch --merged >/tmp/merged-branches && vim /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
+alias portainer="docker run -d -p 8099:8099 -p 10000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer --no-auth"
+
+alias s="smerge ."
+# alias docker="podman"
