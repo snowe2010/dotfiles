@@ -58,6 +58,7 @@ cask 'daisydisk'
 cask 'fantastical'
 cask 'firefox'
 cask 'flux'
+cask 'github'
 cask 'google-chrome'
 cask 'gpg-suite'
 cask 'hammerspoon'
@@ -68,15 +69,22 @@ cask 'karabiner-elements'
 cask 'keycastr'
 cask 'jetbrains-toolbox'
 cask 'postbox'
-cask 'slack'
+cask 'qmk-toolbox'
+cask 'rambox'
+cask 'slack' # might not need this with rambox
 cask 'sonos'
 cask 'spotify'
+cask 'steam'
 cask 'sublime-text'
 cask 'sublime-merge'
+cask 'ultimaker-cura'
+cask 'virtualbox'
 cask 'visual-studio-code'
+cask 'zulip' # might not need this with rambox
 
 mas "GIF Brewery 3 by Gfycat (3.9.2)", id: 1081413713 
 mas "The Unarchiver", id: 425424353
 mas "LastPass Password Manager", id: 926036361
 mas "Microsoft OneNote", id: 784801555
 mas "OneHighlighter", id: 1131580917
+mas "GIF Keyboard (2.0.5)", id: 1043270657
