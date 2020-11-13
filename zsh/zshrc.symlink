@@ -87,3 +87,7 @@ export PATH="/usr/local/opt/nvm/versions/node/v10.16.0/bin:/usr/local/Cellar/nvm
 # remove rbenv here to use system ruby (2.7.3dev)
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/tyler/.sdkman"
+[[ -s "/Users/tyler/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/tyler/.sdkman/bin/sdkman-init.sh"

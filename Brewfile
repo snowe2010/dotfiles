@@ -88,3 +88,4 @@ mas "LastPass Password Manager", id: 926036361
 mas "Microsoft OneNote", id: 784801555
 mas "OneHighlighter", id: 1131580917
 mas "GIF Keyboard (2.0.5)", id: 1043270657
+mas "1Password 7 - Password Manager", id: 1333542190

@@ -35,11 +35,11 @@ Install:andUse("FadeLogo", {
     },
     start = true
 })
-Install:andUse("Caffeine", {
-    start   = true,
-    hotkeys = { toggle = { hyper, "1" } },
-})
-spoon.Caffeine:clicked() -- start caffeine by default
+-- Install:andUse("Caffeine", {
+--     start   = true,
+--     hotkeys = { toggle = { hyper, "1" } },
+-- })
+-- spoon.Caffeine:clicked() -- start caffeine by default
 Install:andUse("Keychain")
 Install:andUse("Token", {
     hotkeys = {
@@ -117,7 +117,7 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('k', 'Kitematic')] = id('com.electron.kitematic'),
             [s.singleKey('p', 'Postman')] = id('com.postmanlabs.mac'),
             [s.singleKey('o', 'OneNote')] = id('com.microsoft.onenote.mac'),
-            [s.singleKey('n', 'Canary')] = id('com.google.Chrome.canary'),
+            [s.singleKey('n', 'Notion')] = id('notion.id'),
         }
         hs.hotkey.bind('alt', 'f', s.recursiveBind(app_keymap))
 
@@ -144,6 +144,14 @@ Install:andUse("RecursiveBinder", {
             [s.singleKey('p', 'pastebin')] = function() spoon.Pastebin:paste() end,
             [s.singleKey('h', 'hotspot')] = function() spoon.PersonalHotspot:toggle() end,
             [s.singleKey('u', 'trigger notification')] = function() hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!", autoWithdraw = false, withdrawAfter = 0}):send() end,
+            [s.singleKey('g', 'email signature')] = function() 
+                sig = [[
+Tyler B. Thrailkill
+Senior Software Engineer
+254.424.4553]] 
+                hs.pasteboard.writeObjects(sig)
+                hs.eventtap.keyStroke("cmd", "v")
+            end,
             [s.singleKey('n', 'notifications')] = {
                 [s.singleKey('a', 'dismiss all')] = function() 
                 hs.osascript.applescript(
@@ -215,27 +223,27 @@ spotify_watcher = hs.application.watcher.new(function(app_name, event_type, app)
 end)
 -- spotify_watcher:start()
 
-function walk_around_notification() 
-    print("sending notification to take a break")
-    hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!", autoWithdraw = false, withdrawAfter = 0}):send()
-end
-notify_table = {}
-for h=8,18 do 
-    print("creating timer for " .. h .. ":00")
-    table.insert(notify_table,
-        hs.timer.doAt(h..":00","1d", function () 
-            print("sending notification to take a break at " .. h .. ": 00")
-            hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!", autoWithdraw = false, withdrawAfter = 0}):send()
-        end)
-    )
-    print("creating timer for " .. h .. ":30")
-    table.insert(notify_table,
-        hs.timer.doAt(h..":30","1d", function () 
-            print("sending notification to take a break at " .. h .. ": 30")
-            hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!", autoWithdraw = false, withdrawAfter = 0}):send()
-        end)
-    ) 
-end
+-- function walk_around_notification() 
+--     print("sending notification to take a break")
+--     hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!", autoWithdraw = false, withdrawAfter = 0}):send()
+-- end
+-- notify_table = {}
+-- for h=8,18 do 
+--     print("creating timer for " .. h .. ":00")
+--     table.insert(notify_table,
+--         hs.timer.doAt(h..":00","1d", function () 
+--             print("sending notification to take a break at " .. h .. ": 00")
+--             hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!", autoWithdraw = false, withdrawAfter = 0}):send()
+--         end)
+--     )
+--     print("creating timer for " .. h .. ":30")
+--     table.insert(notify_table,
+--         hs.timer.doAt(h..":30","1d", function () 
+--             print("sending notification to take a break at " .. h .. ": 30")
+--             hs.notify.new({title = 'Break Time', informativeText = "TAKE A BREAK!!!", autoWithdraw = false, withdrawAfter = 0}):send()
+--         end)
+--     ) 
+-- end
 
 -- bundleID = "com.google.Chrome.app.Default-ffkcnngijbamigpamhifoipldnddpfbj"
 -- hs.urlevent.openURLWithBundle("https://promontech.atlassian.net/browse/LP-14215", bundleID)
