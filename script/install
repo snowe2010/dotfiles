@@ -4,6 +4,14 @@
 
 set -e
 
+which -s brew
+if [[ $? != 0 ]] ; then
+    # Install Homebrew
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+    brew update
+fi
+
 cd "$(dirname $0)"/..
 
 # Run Homebrew through the Brewfile
