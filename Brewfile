@@ -2,7 +2,8 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 tap 'puma/puma'
-tap 'caskroom/versions'
+tap 'homebrew/cask'
+tap 'homebrew/cask-versions'
 tap 'homebrew/cask-drivers'
 # QMK dev
 tap 'osx-cross/avr'
