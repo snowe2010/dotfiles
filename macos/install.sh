@@ -3,7 +3,7 @@
 # command line interface to it that we can use to just install everything, so
 # yeah, let's do that.
 
-source $DOTFILES/bin/prompt.sh
+source ../bin/prompt.sh
 
 confirm_yes "Update Mac Software?" && {
     echo "› sudo softwareupdate -i -a";
