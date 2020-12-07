@@ -21,6 +21,7 @@ brew 'fd'
 brew 'fish'
 brew 'fzf'
 brew 'git'
+brew 'gitify'
 brew 'httpie'
 brew 'jp2a'
 #brew 'libcaca', args: ['with-imlib2']
