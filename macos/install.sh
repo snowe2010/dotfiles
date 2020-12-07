@@ -3,7 +3,11 @@
 # command line interface to it that we can use to just install everything, so
 # yeah, let's do that.
 
-source ../bin/prompt.sh
+
+cd "$(dirname "$0")/.."
+DOTFILES=$(pwd -P)
+echo `pwd`
+source $DOTFILES/bin/prompt.sh
 
 confirm_yes "Update Mac Software?" && {
     echo "› sudo softwareupdate -i -a";
