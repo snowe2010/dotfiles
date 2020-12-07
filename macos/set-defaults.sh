@@ -332,4 +332,7 @@ defaults write com.apple.universalaccess reduceMotion -int 1
 
 defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 
+# load custom shortcuts like Spotlight on ctrl+space instead of cmd+space
+defaults import com.apple.symbolichotkeys symbolichotkeys.plist
+
 killall Dock
