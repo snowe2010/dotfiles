@@ -4,7 +4,6 @@ tap 'homebrew/bundle'
 tap 'puma/puma'
 tap 'caskroom/versions'
 tap 'homebrew/cask-drivers'
-tap 'promontech/promontech', 'git@github.com:promontech/homebrew-promontech.git'
 
 cask 'xquartz' # required for libcaca
 cask 'java8'   # required for gradle
@@ -21,7 +20,6 @@ brew 'libgit2'
 brew 'maven'
 brew 'node'
 brew 'postgresql'
-brew 'pt-cli', args: ['HEAD']
 
 cask 'graphiql'
 cask 'docker'
