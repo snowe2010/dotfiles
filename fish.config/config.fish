@@ -113,6 +113,8 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+alias bookmark='mark (basename $PWD)'
+
 alias cat='ccat --bg=dark'
 # zsh is able to auto-do some kungfoo
 # depends on the SUFFIX :)
