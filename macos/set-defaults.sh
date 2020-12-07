@@ -331,3 +331,5 @@ defaults write com.apple.dock wvous-br-modifier -int 3
 defaults write com.apple.universalaccess reduceMotion -int 1
 
 defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+
+killall Dock
