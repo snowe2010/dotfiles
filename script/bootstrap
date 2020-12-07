@@ -3,7 +3,7 @@
 # bootstrap installs things.
 
 cd "$(dirname "$0")/.."
-DOTFILES_ROOT=$(pwd -P)
+DOTFILES=$(pwd -P)
 
 set -e
 
@@ -130,14 +130,14 @@ install_dotfiles () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+  for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
   done
 
   info 'creating .config folders'
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.config' -not -path '*.git*')
+  for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.config' -not -path '*.git*')
   do
       dst="$HOME/.config/$(basename "${src%.*}")"
       link_file "$src" "$dst"

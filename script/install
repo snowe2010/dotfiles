@@ -3,7 +3,7 @@
 # Run all dotfiles installers.
 
 cd "$(dirname "$0")/.."
-DOTFILES_ROOT=$(pwd -P)
+DOTFILES=$(pwd -P)
 
 set -e
 
