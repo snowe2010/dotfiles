@@ -22,7 +22,7 @@ brew 'fzf'
 brew 'git'
 brew 'httpie'
 brew 'jp2a'
-brew 'libcaca', args: ['with-imlib2']
+#brew 'libcaca', args: ['with-imlib2']
 brew 'libgit2'
 brew 'mas'
 brew 'openssl'
@@ -41,7 +41,7 @@ brew 'unrar'
 brew 'weechat'
 brew 'wget'
 brew 'yarn'
-brew 'zsh'
+#brew 'zsh'
 
 # For QMK dev
 brew 'avr-gcc@7', link: true
