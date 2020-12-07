@@ -53,12 +53,12 @@ defaults write com.apple.finder AppleShowAllFiles -bool true
 # Tunnelblick #
 ###############
 
-echo '>> updating tunnelblick settings'
+#echo '>> updating tunnelblick settings'
 
 # set vpn settings
-defaults write net.tunnelblick.tunnelblick "promontech-openvpn-test-doNotDisconnectOnSleep" -int 1 
-defaults write net.tunnelblick.tunnelblick "promontech-openvpn-test-doNotReconnectOnWakeFromSleep" -int 1
-defaults write net.tunnelblick.tunnelblick "promontech-openvpn-test-doNotDisconnectOnFastUserSwitch" -int 1
+#defaults write net.tunnelblick.tunnelblick "promontech-openvpn-test-doNotDisconnectOnSleep" -int 1 
+#defaults write net.tunnelblick.tunnelblick "promontech-openvpn-test-doNotReconnectOnWakeFromSleep" -int 1
+#defaults write net.tunnelblick.tunnelblick "promontech-openvpn-test-doNotDisconnectOnFastUserSwitch" -int 1
 
 ###############################################################################
 # Finder                                                                      #
