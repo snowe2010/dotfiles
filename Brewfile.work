@@ -6,7 +6,7 @@ tap 'caskroom/versions'
 tap 'homebrew/cask-drivers'
 
 cask 'xquartz' # required for libcaca
-cask 'java8'   # required for gradle
+# cask 'java8'   # required for gradle
 
 brew 'gradle'
 brew 'groovy'
@@ -15,7 +15,7 @@ brew 'jp2a'
 brew 'jenv'
 brew 'jq'
 brew 'kotlin'
-brew 'libcaca', args: ['with-imlib2']
+# brew 'libcaca', args: ['with-imlib2']
 brew 'libgit2'
 brew 'maven'
 brew 'node'
@@ -26,3 +26,5 @@ cask 'docker'
 cask 'google-drive-file-stream'
 cask 'kitematic'
 cask 'tunnelblick'
+
+mas "Jira Cloud by Atlassian", id: 1475897096

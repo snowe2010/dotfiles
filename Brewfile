@@ -12,6 +12,7 @@ tap 'PX4/homebrew-px4'
 
 cask 'xquartz' # required for libcaca
 
+brew 'asdf'
 brew 'bash-completion'
 brew 'bat'
 brew 'coreutils'
@@ -87,7 +88,7 @@ cask 'zulip' # might not need this with rambox
 mas "GIF Brewery 3 by Gfycat (3.9.2)", id: 1081413713 
 mas "The Unarchiver", id: 425424353
 mas "LastPass Password Manager", id: 926036361
-mas "Microsoft OneNote", id: 784801555
-mas "OneHighlighter", id: 1131580917
+# mas "Microsoft OneNote", id: 784801555
+# mas "OneHighlighter", id: 1131580917
 mas "GIF Keyboard (2.0.5)", id: 1043270657
 mas "1Password 7 - Password Manager", id: 1333542190
