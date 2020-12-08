@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 #
 # bootstrap installs things.
+# only need to run when you have new symlinks or whatever
 
 cd "$(dirname "$0")/.."
 DOTFILES=$(pwd -P)
 
 set -e
+
+if [ ! -d "~/Library/Mobile \Documents/com~apple~CloudDocs" ] 
+then
+    echo "You must sign in to iCloud in System Preferences before running this script" 
+    exit 132
+fi
 
 echo ''
 
