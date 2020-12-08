@@ -136,6 +136,7 @@ install_dotfiles () {
     link_file "$src" "$dst"
   done
 
+  mkdir -p "$HOME/.config"
   info 'creating .config folders'
   for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.config' -not -path '*.git*')
   do
