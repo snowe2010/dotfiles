@@ -8,7 +8,7 @@ DOTFILES=$(pwd -P)
 
 set -e
 
-if [ ! -d "~/Library/Mobile \Documents/com~apple~CloudDocs" ] 
+if [ ! -d "~/Library/Mobile Documents/com~apple~CloudDocs" ] 
 then
     echo "You must sign in to iCloud in System Preferences before running this script" 
     exit 132
