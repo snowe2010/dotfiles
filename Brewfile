@@ -73,17 +73,17 @@ cask 'keycastr'
 cask 'jetbrains-toolbox'
 cask 'postbox'
 cask 'qmk-toolbox'
-cask 'rambox'
-cask 'slack' # might not need this with rambox
+# cask 'rambox'
+cask 'slack'
 cask 'sonos'
 cask 'spotify'
 cask 'steam'
 cask 'sublime-text'
 cask 'sublime-merge'
 cask 'ultimaker-cura'
-cask 'virtualbox'
+# cask 'virtualbox'
 cask 'visual-studio-code'
-cask 'zulip' # might not need this with rambox
+cask 'zulip'
 
 mas "GIF Brewery 3 by Gfycat (3.9.2)", id: 1081413713 
 mas "The Unarchiver", id: 425424353
