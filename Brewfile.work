@@ -2,12 +2,14 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 tap 'puma/puma'
-tap 'caskroom/versions'
+tap 'homebrew/cask'
+tap 'homebrew/cask-versions'
 tap 'homebrew/cask-drivers'
 
 cask 'xquartz' # required for libcaca
 # cask 'java8'   # required for gradle
 
+brew 'asdf'
 brew 'gradle'
 brew 'groovy'
 brew 'hub'
@@ -17,8 +19,8 @@ brew 'jq'
 brew 'kotlin'
 # brew 'libcaca', args: ['with-imlib2']
 brew 'libgit2'
-brew 'maven'
-brew 'node'
+#brew 'maven'
+#brew 'node'
 brew 'postgresql'
 
 cask 'graphiql'
