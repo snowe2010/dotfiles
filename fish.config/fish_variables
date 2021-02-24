@@ -6,8 +6,8 @@ SETUVAR FZF_LEGACY_KEYBINDINGS:0
 SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
-SETUVAR --export SSH_AGENT_PID:11463
-SETUVAR --export SSH_AUTH_SOCK:/var/folders/g0/pyvb94gn6mqc2zl566xp07lr0000gn/T//ssh\x2ds8racxCXBhMW/agent\x2e11462
+SETUVAR --export SSH_AGENT_PID:26414
+SETUVAR --export SSH_AUTH_SOCK:/var/folders/g0/pyvb94gn6mqc2zl566xp07lr0000gn/T//ssh\x2dN4XjgFcvZsSH/agent\x2e26413
 SETUVAR __fish_initialized:3100
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr

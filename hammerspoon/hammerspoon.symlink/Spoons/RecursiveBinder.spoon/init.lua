@@ -40,7 +40,7 @@ obj.helperEntryLengthInChar = 20
 ---             textFont='SF Mono'
 ---             textSize=20}
 obj.helperFormat = {atScreenEdge=2,
-                    strokeColor={ white = 0, alpha = 2 },
+                    strokeColor={ white = 1, alpha = .1 },
                     textFont='Courier',
                     textSize=20}
 

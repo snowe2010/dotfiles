@@ -35,10 +35,10 @@ Install:andUse("FadeLogo", {
     },
     start = true
 })
--- Install:andUse("Caffeine", {
---     start   = true,
---     hotkeys = { toggle = { hyper, "1" } },
--- })
+Install:andUse("Caffeine", {
+    start   = true,
+    hotkeys = { toggle = { hyper, "1" } },
+})
 -- spoon.Caffeine:clicked() -- start caffeine by default
 Install:andUse("Keychain")
 Install:andUse("Token", {
@@ -102,13 +102,13 @@ Install:andUse("RecursiveBinder", {
         id = function(id) return function () hs.application.launchOrFocusByBundleID(id) end end
 
         app_keymap = {
-            [s.singleKey('s', 'Electron')] = id('com.thegoddessinari.rambox'),
-            [s.singleKey('d', 'Fantastical')] = id('com.flexibits.fantastical2.mac'),
+            [s.singleKey('s', 'Slack')] = id('com.tinyspeck.slackmacgap'),
+            [s.singleKey('d', 'Discord')] = id('com.hnc.Discord'),
             [s.singleKey('f', 'Firefox')] = id('org.mozilla.firefox'),
             [s.singleKey('t', 'iTerm')] = id('com.googlecode.iterm2'),
             [s.singleKey('e', 'Postbox')] = id('com.postbox-inc.postbox'),
             [s.singleKey('l', 'Sublime Text')] = id('com.sublimetext.3'),
-            [s.singleKey('m', 'Messages')] = id('com.apple.iChat'),
+            [s.singleKey('m', 'Messages')] = id('com.apple.MobileSMS'),
             [s.singleKey('y', 'Spotify')] = id('com.spotify.client'),
             [s.singleKey('i', 'IDEA')] = id('com.jetbrains.intellij-EAP'),
             [s.singleKey('r', 'RubyMine')] = id('com.jetbrains.rubymine'),

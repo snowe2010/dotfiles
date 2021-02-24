@@ -441,3 +441,5 @@ function awslogin
 end
 
 set -x awslogin
+
+source /usr/local/opt/asdf/asdf.fish
