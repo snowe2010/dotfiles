@@ -22,6 +22,7 @@ brew 'fd'
 brew 'fish'
 brew 'fzf'
 brew 'git'
+brew 'gh'
 brew 'httpie'
 brew 'jp2a'
 brew 'libgit2'
@@ -53,6 +54,7 @@ brew 'avrdude'
 # End QMK dev
 
 
+cask 'barrier'
 cask 'bartender'
 cask 'bettertouchtool'
 cask 'dropbox'
