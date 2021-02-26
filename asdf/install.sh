@@ -1,9 +1,9 @@
-asdf plugin install java
-asdf plugin install maven
-asdf plugin install nodejs
-asdf plugin install python
-asdf plugin install ruby
-asdf plugin install yarn
+asdf plugin add java
+asdf plugin add maven
+asdf plugin add nodejs
+asdf plugin add python
+asdf plugin add ruby
+asdf plugin add yarn
 
 asdf install java latest:adoptopenjdk-
 asdf install maven latest
