@@ -169,3 +169,7 @@ fi
 
 echo ''
 echo '  All installed!'
+
+
+echo "Time for setup. Checklist:"
+echo "gh auth login"
